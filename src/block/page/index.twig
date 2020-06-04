@@ -1,0 +1,50 @@
+{% if view == "header" %}
+	<section class="{{content_prefix}}panel  {{content_mod}}">
+		<picture class="{{content_prefix}}preview  {{content_mod}}">
+			<source media="(max-width: 500px)" srcset="{{img_xs}}">				
+			<img src="{{img}}" class="img-responsive" alt="">
+		</picture>
+	</section>
+{% endif %}
+{% if view == "card" %}
+	<section class="{{content_prefix}}panel  {{content_mod}}">
+		<div class="{{content_prefix}}container  container  {{content_mod}}">
+			<div class="{{content_prefix}}row  grid__row  {{content_mod}}">
+				{% include "../common/card/card.twig" with {
+				 	view: "card", 
+				 	prefix:prefix.card, 
+				 	mod:content_mod, 
+				 	list:list
+				} %}
+			</div>
+			<p class="{{content_prefix}}text  {{content_mod}}">Промо-коды действуют до 31 декабря 2020 года, одна соковыжималка - один купон, один купон - один подарок и скидка</p>
+		</div>
+	</section>
+{% endif %}
+{% if view == "form" %}
+	<section class="{{content_prefix}}panel  {{content_mod}}">
+		<div class="{{content_prefix}}container  container  {{content_mod}}">
+			<h2 class="{{content_prefix}}heading  {{content_mod}}">{{heading}}</h2>
+			{% include "../common/form/form.twig" with {
+				view: 			"order", 
+				prefix:			"form__", 
+				mod:			content_mod, 
+				color:			"", 
+				ID: 			"fm_order",
+			} %}
+		</div>
+	</section>
+{% endif %}
+{% if view == "slider" %}
+	<section class="{{content_prefix}}panel  {{content_mod}}">
+		<div class="{{content_prefix}}container  container  {{content_mod}}">
+			<h2 class="{{content_prefix}}heading  {{content_mod}}">{{heading}}</h2>
+			<p class="{{content_prefix}}text  {{content_mod}}">{{label}}</p>
+		</div>
+		<div class="{{content_prefix}}slider  {{content_mod}}" data-slick-slider>
+			{% for value in list %}		
+			<div class="{{prefix.card}}item  {{content_mod}}"><img src="{{value.img}}" class="img-responsive" alt=""></div> 
+			{% endfor %}
+		</div>
+	</section>
+{% endif %}

@@ -1,0 +1,76 @@
+.card__{
+	&item{
+		&.is--promo{
+			&-card{
+				font-family: @site_ff_300;
+				text-align: center;
+				color: @black;
+				font-size: 23px;
+				line-height: 25px;
+				.media-breakpoint-up(@xl; {
+					font-size: 31px;
+					line-height: 33px;
+				});
+			}
+			&-slider{
+				width: 380px;
+				height: 400px;
+				img{
+					width: 100%;
+					height: 100%;
+					object-fit: cover;
+					object-position: center;
+				}
+			}
+		}
+	}
+	&row{}
+	&preview{
+		&.is--promo{
+			&-card{
+				margin: 0 auto 26px;
+				border-radius: 50%;
+				width: 200px;
+				height: 200px;
+				overflow: hidden;
+				border: 5px solid #f1f2f2;
+				.media-breakpoint-up(@xl; {
+					width: 343px;
+					height: 343px;
+				});
+				img{
+					width: 100%;
+					height: 100%;
+					object-fit: cover;
+					object-position: center;
+				}
+			}
+		}
+	}
+	&wrap{}
+	&heading{
+		&.is--promo{
+			&-card{
+				text-transform: uppercase;
+				color: #ff484e;
+				font-family: @site_ff_700;
+				font-weight: bold;
+			}
+		}
+	}
+	&label{
+	}
+	&note{
+		&.is--promo{
+			&-card{
+				margin-top: 20px;
+				font-size: 18px;
+				line-height: 19px;
+				.media-breakpoint-up(@xl; {
+					font-size: 22px;
+					line-height: 23px;
+				});
+			}
+		}
+	}
+}
