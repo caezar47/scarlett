@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="ru-RU"> 
+    <head>
+        {% include "../block/common/head/head.twig" with {title:"Главная"}  %}
+    </head>
+    <body>
+        {% include "../block/page/index.twig" with {
+            view: "modals",
+            content_prefix:"content-block__", 
+            content_mod:"", 
+        } %}  
+        {% include "../block/common/modals/include.twig" %}        
+        {% include "../block/common/script/script.twig" with {
+            view: "modal"
+        }%}
+    </body>
+</html> 

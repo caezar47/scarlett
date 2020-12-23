@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="ru-RU"> 
-    <head>  
-
+    <head>
         <meta charset="utf-8">	
-<title>Главная | 2sharp.ru</title>
+<title>Главная | scarlett.ru</title>
 <meta name="description" content=""/>
 <meta name="viewport" content="width=device-width">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,10 +14,11 @@
     <body>
         	<section class="content-block__panel  is--promo-header">
 		<picture class="content-block__preview  is--promo-header">
-			<source media="(max-width: 500px)" srcset="./img/default/slider-xs.jpg">				
+			<source media="(max-width: 500px)" srcset="./img/default/slider-xs.jpg">
 			<img src="./img/default/slider-lg.jpg" class="img-responsive" alt="">
 		</picture>
 	</section>
+
         	<section class="content-block__panel  is--promo-card">
 		<div class="content-block__container  container  is--promo-card">
 			<div class="content-block__row  grid__row  is--promo-card">
@@ -54,11 +54,12 @@
 			<p class="content-block__text  is--promo-card">Промо-коды действуют до 31 декабря 2020 года, одна соковыжималка - один купон, один купон - один подарок и скидка</p>
 		</div>
 	</section>
+
         	<section class="content-block__panel  is--promo-form">
 		<div class="content-block__container  container  is--promo-form">
 			<h2 class="content-block__heading  is--promo-form">Форма регистрации чека</h2>
 				<form action="#" class="form__panel  is--promo-form"  data-form-validation>
-		<div class="form__row  grid__row  is--promo-form">				
+		<div class="form__row  is--promo-form">				
 					
 	<label class="form__item  is--promo-form">
 		<input type="text" class="form__control  is--promo-form  validate[required, custom[onlyLetterSp]]"  placeholder="Ваше имя" >
@@ -106,6 +107,7 @@
 	</form>
 		</div>
 	</section>
+
  
         	<section class="content-block__panel  is--promo-slider">
 		<div class="content-block__container  container  is--promo-slider">
@@ -135,10 +137,60 @@
 			<div class="card__item  is--promo-slider"><img src="./img/default/promo-card2.jpg" class="img-responsive" alt=""></div> 
 					</div>
 	</section>
+
  
 
 
-        <!-- $('#modal-message').modal(); -->
+        <div class="modal__block modals  fade  is--modal-hyundai" id="modal-hyundai" tabindex="-1" role="dialog" aria-hidden="true">
+	<div class="modal__dialog  is--modal-hyundai">
+		<div class="modal__body  is--modal-hyundai"  style="background-image: url(./img/default/modal-hyundai-50.png)">
+			<button type="button" class="modal__btn-close  modal-close  is--modal-hyundai" data-dismiss="modal" aria-hidden="true">
+				<svg class="icon-svg icon-modal-close" role="img">
+	<use xlink:href="./img/svg/sprite.svg#modal-close"></use>
+</svg>			</button>
+			<div class="modal__content  is--modal-hyundai"> 
+				<p class="modal__heading  is--modal-hyundai">
+					Подпишись и получи спецпредложение
+				</p>
+				<p class="modal__preview  is--modal-hyundai">
+					<img src="./img/default/modal-hyundai-50-sale.png" alt="" class="img-responsive">
+				</p>
+				<form action="" class="form__panel  is--modal-hyundai">
+					<div class="form__item  is--modal-hyundai">
+						<input type="text" class="form__control  is--modal-hyundai" placeholder="ваш e-mail">
+					</div>
+					<button class="form__submit  is--modal-hyundai">получить скидку</button>
+				</form>
+			</div> 
+		</div>
+	</div>
+</div>
+ 
+<div class="modal__block modals  fade  is--modal-timberk" id="modal-timberk" tabindex="-1" role="dialog" aria-hidden="true">
+	<div class="modal__dialog  is--modal-timberk">
+		<div class="modal__body  is--modal-timberk" >
+			<button type="button" class="modal__btn-close  modal-close  is--modal-timberk" data-dismiss="modal" aria-hidden="true">
+				<svg class="icon-svg icon-modal-close" role="img">
+	<use xlink:href="./img/svg/sprite.svg#modal-close"></use>
+</svg>			</button>
+			<div class="modal__preview  is--modal-timberk">
+				<img src="./img/default/modal-timberk-50.png" class="img-responsive" alt="">	
+			</div>	
+			<div class="modal__content  is--modal-timberk">
+						
+				<p class="modal__heading  is--modal-timberk">
+					Подпишитесь и будьте<br> в курсе всех акций и предложений!
+				</p>
+				<form action="" class="form__panel  is--modal-timberk">
+					<div class="form__item  is--modal-timberk">
+						<input type="text" class="form__control  is--modal-timberk" placeholder="ваш e-mail">
+					</div>
+					<button class="form__submit  is--modal-timberk">получить скидку</button>
+				</form>
+			</div> 
+		</div>
+	</div>
+</div>
 <div class="modal__block modals  fade  " id="modal-message" tabindex="-1" role="dialog" aria-hidden="true">
 	<div class="modal__dialog  ">
 		<div class="modal__body  " >
@@ -167,7 +219,9 @@
 			</div> 
 		</div>
 	</div>
-</div>        
+</div>
+ 
+        
         <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 <!--[if lt IE 9]>
 	<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>

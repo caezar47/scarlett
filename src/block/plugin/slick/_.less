@@ -107,6 +107,9 @@
 		&.is--prev{
 			left: 0px;
 			background-image: linear-gradient(90deg, fadeout(@white, 0%) 0%, fadeout(@white, 100%) 100%);
+			[data-slick-insta] &{
+				background-image: linear-gradient(90deg, fadeout(#fafafa, 0%) 0%, fadeout(#fafafa, 100%) 100%);
+			}
 			&::before{
 				content: '';
 				position: absolute;
@@ -125,7 +128,9 @@
 		}
 		&.is--next{
 			right: 0px;
-			background-image: linear-gradient(90deg, fadeout(@white, 100%) 0%, fadeout(@white,0%) 100%);
+			[data-slick-insta] &{
+				background-image: linear-gradient(90deg, fadeout(#fafafa, 100%) 0%, fadeout(#fafafa,0%) 100%);
+			}
 			&::before{
 				content: '';
 				position: absolute;

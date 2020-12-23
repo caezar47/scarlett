@@ -5,13 +5,44 @@
     </head>
     <body>
         {% include "../block/page/index.twig" with {
-            view: "header",
+            view: "insta",
             content_prefix:"content-block__", 
-            content_mod:"is--promo-header",    
-            img:[path.img,"/default/slider-lg.jpg"].join(''),
-            img_xs:[path.img,"/default/slider-xs.jpg"].join(''),
+            content_mod:"is--promo-insta",    
+            img:[path.img,"/default/insta.png"].join(''),
+            list:[
+                {
+                    img:[path.img,"/default/promo-card1.jpg"].join(''),
+                },
+                {
+                    img:[path.img,"/default/promo-card2.jpg"].join(''),
+                },
+                {
+                    img:[path.img,"/default/promo-card3.jpg"].join(''),
+                },
+                {
+                    img:[path.img,"/default/promo-card1.jpg"].join(''),
+                },
+                {
+                    img:[path.img,"/default/promo-card2.jpg"].join(''),
+                },
+                {
+                    img:[path.img,"/default/promo-card1.jpg"].join(''),
+                },
+                {
+                    img:[path.img,"/default/promo-card2.jpg"].join(''),
+                },
+                {
+                    img:[path.img,"/default/promo-card3.jpg"].join(''),
+                },
+                {
+                    img:[path.img,"/default/promo-card1.jpg"].join(''),
+                },
+                {
+                    img:[path.img,"/default/promo-card2.jpg"].join(''),
+                },
+            ],
         } %}
-        {% include "../block/page/index.twig" with {
+        {# {% include "../block/page/index.twig" with {
             view: "card",
             content_prefix:"content-block__", 
             content_mod:"is--promo-card",
@@ -40,7 +71,7 @@
             content_prefix:"content-block__", 
             content_mod:"is--promo-form",
             heading:"Форма регистрации чека",                     
-        } %} 
+        } %}  
         {% include "../block/page/index.twig" with {
             view: "slider",
             content_prefix:"content-block__", 
@@ -82,7 +113,8 @@
         } %} 
 
 
-        {% include "../block/common/modals/include.twig"%}        
+        {% include "../block/common/modals/include.twig"%}   
+        #}     
         {% include "../block/common/script/script.twig"%}
     </body>
 </html> 

@@ -43,6 +43,12 @@
 				left: inherit;
 			}
 		});
+		&.is--modal-timberk{
+			max-width: 600px;
+		}
+		&.is--modal-hyundai{
+			max-width: 600px;
+		}
 		//top: 0;
 		//left: 0;
 		//transform: translateY(0);
@@ -50,10 +56,33 @@
 	&body {
 		position: relative;
 		padding: 30px;
+		&.is--modal-timberk{
+			padding: 0px;
+		}
+		&.is--modal-hyundai{
+			padding: 28px;
+			background-repeat: no-repeat;
+			background-position: center;
+		}
+	}
+	&preview{		
+		&.is--modal-hyundai{
+			margin-bottom: 32px;
+			img{
+				margin: 0 auto;
+			}
+		}
 	}
 	&content{
 		background-color: @modal_bg;
 		padding: 5px 5px 30px;
+		&.is--modal-timberk{
+			padding: 20px 15px 30px;
+		}
+		&.is--modal-hyundai{
+			padding: 38px 15px;
+			max-width: 270px;
+		}
 	}
 	&btn-close{
 		.btn-clearfix();
@@ -69,6 +98,20 @@
 	   	transition: @trs-site;   
 		&:hover{
 			color: @modal_btn_color_hover;
+		}
+		&.is--modal-timberk{
+			top: 5px;
+			right: 5px;
+			&:hover{
+				color: #0033a1;
+			}
+		}
+		&.is--modal-hyundai{
+			background-color: #0033a1;
+			&:hover{
+				background-color: #00afab;
+				color: @white;
+			}
 		}
 	}
 	&row{
@@ -93,7 +136,6 @@
 			height: 100%;
 			object-position: center;
 			object-fit: cover;
-
 		}
 	}
 	&heading{
@@ -109,6 +151,19 @@
 			line-height: 33px;
 			margin-bottom: 32px;					
 		});
+		&.is--modal-timberk{
+			font-size: 15px;
+			line-height: 17px;
+			font-weight: 400;
+			color: #00afab;
+			margin-bottom: 20px;
+		}
+		&.is--modal-hyundai{
+			font-size: 14px;
+			line-height: 15px;
+			color: #595a5c;
+			margin-bottom: 37px;
+		}
 	}
 	&label{
 		color: #585858;

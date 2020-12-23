@@ -1,7 +1,7 @@
 {% if view == "header" %}
 	<section class="{{content_prefix}}panel  {{content_mod}}">
 		<picture class="{{content_prefix}}preview  {{content_mod}}">
-			<source media="(max-width: 500px)" srcset="{{img_xs}}">				
+			<source media="(max-width: 500px)" srcset="{{img_xs}}">
 			<img src="{{img}}" class="img-responsive" alt="">
 		</picture>
 	</section>
@@ -45,6 +45,43 @@
 			{% for value in list %}		
 			<div class="{{prefix.card}}item  {{content_mod}}"><img src="{{value.img}}" class="img-responsive" alt=""></div> 
 			{% endfor %}
+		</div>
+	</section>
+{% endif %}
+{% if view == "modals" %}
+	<section class="{{content_prefix}}panel  {{content_mod}}">
+		<div class="{{content_prefix}}container  container  {{content_mod}}">
+			<div style="margin-bottom: 10px;">
+				<a href="#" class="form__link" data-toggle="modal" data-target="#modal-timberk">Скидки -50% timberk</a>	
+			</div>
+			<div style="margin-bottom: 10px;">
+				<a href="#" class="form__link" data-toggle="modal" data-target="#modal-hyundai">Скидки -50% hyundai</a>	
+			</div>
+		</div>
+	</section>
+{% endif %}
+
+{% if view == "insta" %}
+	<section class="{{content_prefix}}panel  {{content_mod}}">
+		<div class="{{content_prefix}}container  container  {{content_mod}}">
+			<div class="{{content_prefix}}row  {{content_mod}}">
+				<div>
+					<a href="https://www.instagram.com/scarlett.club/" target="_blank"><img src="{{img}}" alt=""></a>
+				</div>
+				<div class="{{content_prefix}}heading  {{content_mod}}">
+					Мы в Instagram <a href="https://www.instagram.com/scarlett.club/" target="_blank">@scarlett.club</a>
+				</div>
+				<div>
+					<a class="{{content_prefix}}btn  {{content_mod}}" href="https://www.instagram.com/scarlett.club/" target="_blank">Подписаться</a>
+				</div>
+			</div>
+		</div>
+		<div class="{{content_prefix}}container  container  {{content_mod}}-slider">
+			<div class="{{content_prefix}}slider  {{content_mod}}" data-slick-insta>
+				{% for value in list %}		
+				<a href="#" class="{{prefix.card}}item  {{content_mod}}"><img src="{{value.img}}" class="img-responsive" alt=""></a> 
+				{% endfor %}
+			</div>
 		</div>
 	</section>
 {% endif %}

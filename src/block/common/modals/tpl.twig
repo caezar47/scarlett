@@ -1,4 +1,55 @@
-<!-- $('#modal-message').modal(); -->
+{% if ID == "modal-timberk" %}
+<div class="{{prefix}}block modals  fade  {{mod}}" id="{{ID}}" tabindex="-1" role="dialog" aria-hidden="true">
+	<div class="{{prefix}}dialog  {{mod}}">
+		<div class="{{prefix}}body  {{mod}}" >
+			<button type="button" class="{{prefix}}btn-close  modal-close  {{mod}}" data-dismiss="modal" aria-hidden="true">
+				{% include "../svg-sprite/svg.twig" with {icon:"modal-close"} %}
+			</button>
+			<div class="{{prefix}}preview  {{mod}}">
+				<img src="{{path.img}}/default/modal-timberk-50.png" class="img-responsive" alt="">	
+			</div>	
+			<div class="{{prefix}}content  {{mod}}">
+						
+				<p class="{{prefix}}heading  {{mod}}">
+					Подпишитесь и будьте<br> в курсе всех акций и предложений!
+				</p>
+				<form action="" class="form__panel  {{mod}}">
+					<div class="form__item  {{mod}}">
+						<input type="text" class="form__control  {{mod}}" placeholder="ваш e-mail">
+					</div>
+					<button class="form__submit  {{mod}}">получить скидку</button>
+				</form>
+			</div> 
+		</div>
+	</div>
+</div>
+{% endif %}
+{% if ID == "modal-hyundai" %}
+<div class="{{prefix}}block modals  fade  {{mod}}" id="{{ID}}" tabindex="-1" role="dialog" aria-hidden="true">
+	<div class="{{prefix}}dialog  {{mod}}">
+		<div class="{{prefix}}body  {{mod}}"  style="background-image: url({{path.img}}/default/modal-hyundai-50.png)">
+			<button type="button" class="{{prefix}}btn-close  modal-close  {{mod}}" data-dismiss="modal" aria-hidden="true">
+				{% include "../svg-sprite/svg.twig" with {icon:"modal-close"} %}
+			</button>
+			<div class="{{prefix}}content  {{mod}}"> 
+				<p class="{{prefix}}heading  {{mod}}">
+					Подпишись и получи спецпредложение
+				</p>
+				<p class="{{prefix}}preview  {{mod}}">
+					<img src="{{path.img}}/default/modal-hyundai-50-sale.png" alt="" class="img-responsive">
+				</p>
+				<form action="" class="form__panel  {{mod}}">
+					<div class="form__item  {{mod}}">
+						<input type="text" class="form__control  {{mod}}" placeholder="ваш e-mail">
+					</div>
+					<button class="form__submit  {{mod}}">получить скидку</button>
+				</form>
+			</div> 
+		</div>
+	</div>
+</div>
+{% endif %}
+{% if ID == "modal-message" %}
 <div class="{{prefix}}block modals  fade  {{mod}}" id="{{ID}}" tabindex="-1" role="dialog" aria-hidden="true">
 	<div class="{{prefix}}dialog  {{mod}}">
 		<div class="{{prefix}}body  {{mod}}" >
@@ -27,3 +78,4 @@
 		</div>
 	</div>
 </div>
+{% endif %}
