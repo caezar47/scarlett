@@ -7,7 +7,7 @@ $(function() {
 	slider.slick({
 		slidesToShow: 5,
 		slidesToScroll: 1,
-		arrows: true,
+		arrows: false,
 		dots: false,
 		infinite: true,
 		variableWidth: true,
@@ -52,12 +52,14 @@ $(function() {
 	insta.slick({
 		slidesToShow: 5,
 		slidesToScroll: 1,
-		arrows: true,
+		arrows: false,
 		dots: false,
 		infinite: true,
 		variableWidth: true, 
 		prevArrow: prevArrow,
 		nextArrow: nextArrow,
+		autoplay: true,
+  		autoplaySpeed: 4000,
 		responsive: [		  
 		    {
 				breakpoint: 1200,

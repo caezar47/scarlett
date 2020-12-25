@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html dir="ltr" lang="ru-RU"> 
+<html dir="ltr" lang="ru-RU" style="font-size: 14px; line-height: 1.5;"> 
     <head>
         {% include "../block/common/head/head.twig" with {title:"Главная"}  %}
     </head>
@@ -12,33 +12,41 @@
             list:[
                 {
                     img:[path.img,"/default/promo-card1.jpg"].join(''),
+                    group:'is--gallery',
                 },
                 {
                     img:[path.img,"/default/promo-card2.jpg"].join(''),
+                    group:'is--video',
                 },
                 {
                     img:[path.img,"/default/promo-card3.jpg"].join(''),
+                    group:'is--gallery',
+                },
+                {
+                    img:[path.img,"/default/promo-card1.jpg"].join(''),
+                    group:'is--gallery',
+                },
+                {
+                    img:[path.img,"/default/promo-card2.jpg"].join(''),
+                    group:'is--gallery',
                 },
                 {
                     img:[path.img,"/default/promo-card1.jpg"].join(''),
                 },
                 {
                     img:[path.img,"/default/promo-card2.jpg"].join(''),
-                },
-                {
-                    img:[path.img,"/default/promo-card1.jpg"].join(''),
-                },
-                {
-                    img:[path.img,"/default/promo-card2.jpg"].join(''),
+                    group:'is--gallery',
                 },
                 {
                     img:[path.img,"/default/promo-card3.jpg"].join(''),
+                    group:'is--gallery',
                 },
                 {
                     img:[path.img,"/default/promo-card1.jpg"].join(''),
                 },
                 {
                     img:[path.img,"/default/promo-card2.jpg"].join(''),
+                    group:'is--gallery',
                 },
             ],
         } %}
