@@ -90,7 +90,7 @@
 						&:nth-child(1){
 							a{
 								display: block;
-								max-height: 65px;
+								max-width: 65px;
 							}
 						}
 					}
@@ -139,9 +139,13 @@
 				font-family: @site_ff_300;
 				text-transform: uppercase;
 				text-align: center;
-				font-size: 1.7rem;
-				line-height: 30px;
+				font-size: 1.4rem;
+				line-height: 155%;
 				color: #595959;
+				.media-breakpoint-up(@md; {
+					font-size: 1.7rem;
+					line-height: 30px;
+				});
 				a{
 					color: inherit;
 					font-family: @site_ff_700;
