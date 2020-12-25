@@ -40,10 +40,10 @@
 			&-insta{
 				max-width: 800px;
 				padding-top: 20px;
-				padding-bottom: 25px;
+				//padding-bottom: 25px;
 				&-slider{
 					max-width: 100%;
-					padding-bottom: 66px;
+					padding-bottom: 35px;
 					padding-left: 0;
 					padding-right: 0;
 				}
@@ -75,8 +75,9 @@
 			}
 			&-insta{
 				display: flex;
-				flex-direction: column;
+				flex-wrap: wrap;
 				align-items: center;
+				justify-content: center;
 				margin-left: -15px;
 				margin-right: -15px;
 				& > *{
@@ -84,8 +85,19 @@
 					padding-right: 15px;
 					margin-bottom: 30px;
 				}
+				.media-breakpoint-down(@md; {
+					& > *{
+						&:nth-child(1){
+							a{
+								display: block;
+								max-height: 65px;
+							}
+						}
+					}
+				});
 				.media-breakpoint-up(@md; {
 					flex-direction: row;
+					flex-wrap: nowrap;
 					justify-content: space-between;
 					& > *{
 						margin-bottom: 0px;

@@ -60,7 +60,6 @@
 		</div>
 	</section>
 {% endif %}
-
 {% if view == "insta" %}
 	<section class="{{content_prefix}}panel  {{content_mod}}">
 		<div class="{{content_prefix}}container  container  {{content_mod}}">
@@ -80,10 +79,7 @@
 			<div class="{{content_prefix}}slider  {{content_mod}}" data-slick-insta>
 				{% for value in list %}		
 				<a href="#" class="{{prefix.card}}item  {{content_mod}}  {{value.group}}">
-					<div class="{{prefix.card}}bg  {{content_mod}}">
-						<span class="is--like">87</span>
-						<span class="is--comment">0</span>
-					</div>
+					<div class="{{prefix.card}}bg  {{content_mod}}"></div>
 					<img src="{{value.img}}" class="img-responsive" alt="">
 				</a> 
 				{% endfor %}
