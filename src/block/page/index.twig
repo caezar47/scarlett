@@ -87,3 +87,18 @@
 		</div>
 	</section>
 {% endif %}
+{% if view == "catalog" %}
+	<section class="{{content_prefix}}panel  {{content_mod}}">
+		<div class="{{content_prefix}}container  container  {{content_mod}}-slider">
+			<div style="max-width: 860px;">
+				<div class="{{content_prefix}}slider  {{content_mod}}" data-slick-catalog>
+					{% for value in list %}		
+					<a href="#" class="{{prefix.card}}item  {{content_mod}}  {{value.group}}">
+						<img src="{{value.img}}" class="img-responsive" alt="">
+					</a> 
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+	</section>
+{% endif %}
