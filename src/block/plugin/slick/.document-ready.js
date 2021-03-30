@@ -91,11 +91,11 @@ $(function() {
 		slidesToScroll: 1,
 		arrows: false,
 		dots: false,
-		infinite: true,
+		infinite: false,
 		prevArrow: prevArrow,
 		nextArrow: nextArrow,
-		autoplay: true,
-  		autoplaySpeed: 4000,
+		autoplay: false,
+  		//autoplaySpeed: 4000,
 		responsive: [				  
 		    {
 				breakpoint: 766,
