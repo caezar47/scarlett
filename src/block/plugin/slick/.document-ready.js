@@ -3,6 +3,7 @@ $(function() {
 	var slider = $('[data-slick-slider]');
 	var insta = $('[data-slick-insta]');
 	var catalog = $('[data-slick-catalog]');
+	var catalog_note = $('[data-slick-catalog-note]');
 	var prevArrow = '<button type="button" class="slick-btn  is--prev"><span class="sr-only">Предыдущий слайд</span></button>';
 	var nextArrow = '<button type="button" class="slick-btn  is--next"><span class="sr-only">Следующий слайд</span></button>';
 	slider.slick({
@@ -95,23 +96,30 @@ $(function() {
 		prevArrow: prevArrow,
 		nextArrow: nextArrow,
 		autoplay: false,
-  		//autoplaySpeed: 4000,
 		responsive: [				  
 		    {
 				breakpoint: 766,
 				settings: {
-				variableWidth: true, 
-					slidesToShow: 2,
-					slidesToScroll: 1, 
-				}
-		    },
-		    /*{
-				breakpoint: 576,
-				settings: {
+					variableWidth: true, 
 					slidesToShow: 1,
 					slidesToScroll: 1, 
 				}
-		    }*/
+		    },
 		]
+	});
+	catalog_note.slick({
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		prevArrow: prevArrow,
+		nextArrow: nextArrow,
+		draggable: false,
+		pauseOnFocus: false,
+		pauseOnHover: false,
+		swipe: false,
+		touchMove: false,
+		fade: true, 	
+		autoplay: true,
+		speed: 1000,
+		autoplaySpeed: 7000,
 	});
 }); 

@@ -1119,6 +1119,7 @@
 		top: 0;
 		width: 15%;
 		height: 100%;
+		cursor: pointer;
 		&.is--prev{
 			left: 0px;
 			background-image: linear-gradient(90deg, fadeout(@white, 0%) 0%, fadeout(@white, 100%) 100%);
@@ -1162,6 +1163,32 @@
 					.icon-next(@c: '00c4d9');
 				}
 			}
+		}
+		[data-slick-catalog-note] &{
+			top: 50%;
+			width: 26px;
+			height: 26px;
+			background-color: @white;
+			border-radius: 50%;
+		    box-shadow: 0 4px 24px fadeout(@black, 75%);
+			&::before{
+				background-position: center;
+				background-size: 8px auto!important; 
+			}
+			&.is--prev{
+				transform: translate(-50%,-50%);
+			}
+			&.is--next{
+				transform: translate(50%,-50%);
+			}
+			.media-breakpoint-up(@xl; {
+				width: 48px;
+				height: 48px;
+				top: 43.5%;	
+				&::before{
+					background-size: 12px auto!important; 
+				}		
+			});
 		}
 	}
 }

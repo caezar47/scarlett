@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="ru-RU" style="font-size: 14px; line-height: 1.5;"> 
+    <head>
+        {% include "../block/common/head/head.twig" with {title:"Главная"}  %}
+    </head>
+    <body>
+        {% include "../block/page/index.twig" with {
+            view: "catalog_card",
+            content_prefix: "content-block__", 
+            content_mod:    "is--promo-catalog",    
+            card_prefix:    prefix.card,    
+            card_mod:       "is--promo-catalog-slider",    
+            list:[
+                {
+                    img:'https://www.timberk.ru/upload/iblock/287/2874ad4dd8bebfd0a32d61227468c407.jpg',
+                },
+                {
+                    img:'https://www.timberk.ru/upload/iblock/b76/b765df53c58238259d4dda1c163463ac.jpg',
+                },
+                {
+                    img:'https://www.timberk.ru/upload/iblock/287/2874ad4dd8bebfd0a32d61227468c407.jpg',
+                },
+                {
+                    img:'https://www.timberk.ru/upload/iblock/b76/b765df53c58238259d4dda1c163463ac.jpg',
+                },
+                {
+                    img:'https://www.timberk.ru/upload/iblock/287/2874ad4dd8bebfd0a32d61227468c407.jpg',
+                },
+                {
+                    img:'https://www.timberk.ru/upload/iblock/b76/b765df53c58238259d4dda1c163463ac.jpg',
+                },
+            ],
+        } %}    
+        {% include "../block/common/script/script.twig"%}
+    </body>
+</html>
