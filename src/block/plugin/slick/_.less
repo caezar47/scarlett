@@ -14,6 +14,12 @@
 		&.slick-dotted{
 			
 		}
+		&[data-slick-catalog-note] {
+			margin-bottom: 52px;
+			.media-breakpoint-up(@xl; {
+				margin-bottom: 80px;
+			});
+		}
 	}
 	&-list {
 		position: relative;
@@ -156,11 +162,13 @@
 		[data-slick-catalog-note] &{
 			top: inherit;
 			left: inherit;
-			bottom: 20px;
+			//bottom: 20px;
 			width: 32px;
 			height: 32px;
 			background-color: @white;
 			opacity: 0.8;
+			bottom: -10px;
+			transform: translateY(100%);
 			&::before{
 				background-position: center;
 				background-size: 8px auto!important; 
@@ -169,13 +177,13 @@
 				opacity: 1;
 			}
 			&.is--prev{
-				right: 72px;
+				right: 42px;
 				&::before{
 					.icon-prev(@c: '00c4d9');
 				}
 			}
-			&.is--next{
-				right: 20px;
+			&.is--next{ 
+				right: 0px;
 				&::before{
 					.icon-next(@c: '00c4d9');
 				}
@@ -187,7 +195,7 @@
 					background-size: 12px auto!important; 
 				}
 				&.is--prev{
-					right: 100px;
+					right: 70px;
 				}
 			});
 		}
