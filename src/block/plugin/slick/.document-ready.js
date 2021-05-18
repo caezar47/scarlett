@@ -1,11 +1,61 @@
 'use strict';
 $(function() { 
+	var banner = $('[data-slick-banner]');
+	var banner_white = $('[data-slick-banner-white]');
+	var banner_blue = $('[data-slick-banner-blue]');
 	var slider = $('[data-slick-slider]');
 	var insta = $('[data-slick-insta]');
 	var catalog = $('[data-slick-catalog]');
 	var catalog_note = $('[data-slick-catalog-note]');
 	var prevArrow = '<button type="button" class="slick-btn  is--prev"><span class="sr-only">Предыдущий слайд</span></button>';
 	var nextArrow = '<button type="button" class="slick-btn  is--next"><span class="sr-only">Следующий слайд</span></button>';
+
+	banner.slick({
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		prevArrow: prevArrow,
+		nextArrow: nextArrow,
+		draggable: false,
+		pauseOnFocus: false,
+		pauseOnHover: false,
+		swipe: false,
+		touchMove: false,
+		fade: true, 	
+		autoplay: true,
+		speed: 1000,
+		autoplaySpeed: 7000,
+	});
+	banner_white.slick({
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		arrows: false,
+		dots: true,
+		draggable: false,
+		pauseOnFocus: false,
+		pauseOnHover: false,
+		swipe: false,
+		touchMove: false,
+		fade: true, 	
+		autoplay: true,
+		speed: 1000,
+		autoplaySpeed: 7000,
+	});
+	banner_blue.slick({
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		arrows: false,
+		dots: true,
+		draggable: false,
+		pauseOnFocus: false,
+		pauseOnHover: false,
+		swipe: false,
+		touchMove: false,
+		fade: true, 	
+		autoplay: true,
+		speed: 1000,
+		autoplaySpeed: 7000,
+	});
+
 	slider.slick({
 		slidesToShow: 5,
 		slidesToScroll: 1,

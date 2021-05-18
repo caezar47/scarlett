@@ -5,83 +5,58 @@
     </head>
     <body>
         {% include "../block/page/index.twig" with {
-            view: "header",
+            view: "banner",
             content_prefix:"content-block__", 
-            content_mod:"is--promo-header",    
-            img:[path.img,"/default/slider-lg.jpg"].join(''),
-            img_xs:[path.img,"/default/slider-xs.jpg"].join(''),
-        } %}
-        {% include "../block/page/index.twig" with {
-            view: "card",
-            content_prefix:"content-block__", 
-            content_mod:"is--promo-card",
-            list:[
+            content_mod:"is--index-banner",
+            banner_list:[
                 {
-                    heading:"Купи",
-                    label:"любую соковыжималку Scarlett",
-                    img:[path.img,"/default/promo-card1.jpg"].join(''),
+                    link: '#',
+                    img:[path.img,"/temp/index-banner.jpg"].join(''),
                 },
                 {
-                    heading:"Загрузи",
-                    label:"чек на сайт scarlett.ru и оставь свой электронный адрес",
-                    img:[path.img,"/default/promo-card2.jpg"].join(''),
+                    link: '#',
+                    img:[path.img,"/temp/index-banner.jpg"].join(''),
+                },
+            ],
+            banner_mod: 'is--banner',
+            banner_white_mod: 'is--white',
+            banner_white:[
+                {
+                    mod: 'is--white',
+                    name: 'Всегда под рукой',
+                    note: 'Легкий и удобный с высокой мощностью всасывания',
+                    link: '#',
+                    img:[path.img,"/temp/index-banner2.png"].join(''),
+                    btn: 'Подробнее'
                 },
                 {
-                    heading:"Получи",
-                    label:"промо-код на скидку 20% и тушь Oriflame в подарок",
-                    note:"Введи промо-код при заказе на сайте oriflame.ru, получи скидку 20% и тушь в подарок",
-                    img:[path.img,"/default/promo-card3.jpg"].join(''),
+                    mod: 'is--white',
+                    name: 'Широкий модельный ряд',
+                    note: 'Питание от сети или встроеного аккумулятора',
+                    link: '#',
+                    img:[path.img,"/temp/index-banner3.png"].join(''),
+                },
+            ],
+            banner_blue_mod: 'is--blue',
+            banner_blue:[
+                {
+                    mod: 'is--blue',
+                    name: 'Широкий модельный ряд',
+                    note: 'Питание от сети или встроеного аккумулятора',
+                    link: '#',
+                    img:[path.img,"/temp/index-banner3.png"].join(''),
+                    btn: 'Интернет-магазин'
+                },
+                {
+                    mod: 'is--blue',
+                    name: 'Всегда под рукой',
+                    note: 'Легкий и удобный с высокой мощностью всасывания',
+                    link: '#',
+                    img:[path.img,"/temp/index-banner2.png"].join('')
                 },
             ],
                      
         } %}
-        {% include "../block/page/index.twig" with {
-            view: "form",
-            content_prefix:"content-block__", 
-            content_mod:"is--promo-form",
-            heading:"Форма регистрации чека",                     
-        } %} 
-        {% include "../block/page/index.twig" with {
-            view: "slider",
-            content_prefix:"content-block__", 
-            content_mod:"is--promo-slider",
-            heading:"Размести",                     
-            label:"рецепт на своей страничке в инстаграм с хештегом <span>#соковыжималкаSCARLETT</span> и окажись на странице бренда, а также участвуй в конкурсе рецептов",  
-            list:[
-                {
-                    img:[path.img,"/default/promo-card1.jpg"].join(''),
-                },
-                {
-                    img:[path.img,"/default/promo-card2.jpg"].join(''),
-                },
-                {
-                    img:[path.img,"/default/promo-card3.jpg"].join(''),
-                },
-                {
-                    img:[path.img,"/default/promo-card1.jpg"].join(''),
-                },
-                {
-                    img:[path.img,"/default/promo-card2.jpg"].join(''),
-                },
-                {
-                    img:[path.img,"/default/promo-card1.jpg"].join(''),
-                },
-                {
-                    img:[path.img,"/default/promo-card2.jpg"].join(''),
-                },
-                {
-                    img:[path.img,"/default/promo-card3.jpg"].join(''),
-                },
-                {
-                    img:[path.img,"/default/promo-card1.jpg"].join(''),
-                },
-                {
-                    img:[path.img,"/default/promo-card2.jpg"].join(''),
-                },
-            ],                   
-        } %} 
-
-
         {% include "../block/common/modals/include.twig"%}        
         {% include "../block/common/script/script.twig"%}
     </body>

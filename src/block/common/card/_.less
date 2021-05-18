@@ -1,5 +1,31 @@
 .card__{
 	&item{
+		&.is--banner{
+			&{
+				display: flex!important;
+				flex-direction: column;
+				justify-content: center;
+				height: 100%;
+				font-family: @site_ff_300;
+				font-size: 12px;
+				line-height: 120%;
+				text-align: center;
+				text-decoration: none;
+				//color: @white;
+				padding: 20px 25px;
+				.media-breakpoint-up(@md; {
+					font-size: 14px;
+				});
+			}
+			&.is--white{
+				color: #595959;
+    			background-color: @white;
+			}
+			&.is--blue{
+				color: @white;
+    			background-color: @primary-p;
+			}
+		}
 		&.is--promo{
 			&-card{
 				font-family: @site_ff_300;
@@ -150,6 +176,19 @@
 	}
 	&row{}
 	&preview{
+		&.is--banner{
+			display: block;
+			margin-bottom: 25px;
+			img{
+				margin: 0 auto;
+			}
+			.media-breakpoint-up(@lg; {
+				height: 70%;
+				img{
+					height: 100%;
+				}
+			});
+		}
 		&.is--promo{
 			&-card{
 				margin: 0 auto 26px;
@@ -173,6 +212,16 @@
 	}
 	&wrap{}
 	&heading{
+		&.is--banner{
+			text-transform: uppercase;
+			font-family: @site_ff_700;
+			font-size: 14px;
+			line-height: 120%;
+			margin-bottom: 5px;
+			.media-breakpoint-up(@md; {
+				font-size: 18px;
+			});
+		}
 		&.is--promo{
 			&-card{
 				text-transform: uppercase;
@@ -185,6 +234,8 @@
 	&label{
 	}
 	&note{
+		&.is--banner{
+		}
 		&.is--promo{
 			&-card{
 				margin-top: 20px;
@@ -196,5 +247,34 @@
 				});
 			}
 		}
+	}
+	&btn{
+		&.is--banner{
+			position: absolute;
+			z-index: 1;
+			top: 20px;
+			left: 20px;
+			font-weight: 700;
+			font-family: @site_ff_700;
+			padding: 12px 14px;
+			transition: @trs-site;
+			cursor: pointer;
+			&.is--white{
+				background-color: @primary-p;
+				color: @white;
+				&:hover{
+					background-color: fadeout(@primary-p, 10%);
+				}
+			}
+			&.is--blue{
+				color: @primary-p;
+				background-color: @white;
+				&:hover{
+					background-color: fadeout(@white, 10%);
+				}
+
+			}
+		}
+
 	}
 }
