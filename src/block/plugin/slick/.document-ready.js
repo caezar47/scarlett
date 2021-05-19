@@ -20,7 +20,7 @@ $(function() {
 		pauseOnHover: false,
 		swipe: false,
 		touchMove: false,
-		fade: true, 	
+		//fade: true, 	
 		autoplay: true,
 		speed: 1000,
 		autoplaySpeed: 7000,
