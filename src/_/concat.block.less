@@ -1180,6 +1180,10 @@
 			visibility: visible;
 			transition: opacity 0.35s 0.3s;
 		}
+		&[data-slick-banner-white],
+		&[data-slick-banner-blue] {
+			margin-bottom: 0!important;
+		}
 	}
 	&-list {
 		position: relative;
@@ -1329,9 +1333,10 @@
 			background-color: @white;
 			opacity: 0.8;
 			bottom: -10px;
+			left: initial;
 			transform: translateY(100%);
 			&::before{
-				background-position: center;
+				
 				background-size: 8px auto!important; 
 			}
 			&:hover{
@@ -1341,12 +1346,14 @@
 				right: 42px;
 				&::before{
 					.icon-prev(@c: '00c4d9');
+					background-position: center!important;
 				}
 			}
 			&.is--next{ 
 				right: 0px;
 				&::before{
 					.icon-next(@c: '00c4d9');
+					background-position: center!important;
 				}
 			}
 			.media-breakpoint-up(@xl; {
@@ -1381,35 +1388,42 @@
 		}
 	}
 	&-dots{
-		list-style: none;
-		margin: 0;
-		padding: 0;
-		display: flex;
-		flex-direction: column;
-		position: absolute;
-		bottom: 15px;
-		right: 5px;
-		.media-breakpoint-up(@xl; {
-			bottom: 25px;
-			right: 25px;
-		});
-		li{
-			margin-top: 10px;
-		 	button{
-		 		padding: 0;
-		 		border: 0;
-		 		display: block;
-				background-color: fadeout(@white, 80%);
-		 		width: 15px;
-		 		height: 15px;
-		 		font-size: 0;
-		 		line-height: 0;
-		 		transition: @trs-site;
-		 		cursor: pointer;
-		 	}
-			&.slick-active{
-				button{
-					background-color: @white;
+		[data-slick-banner-white] &,
+		[data-slick-banner-blue] &{
+			width: auto;
+			list-style: none;
+			margin: 0;
+			padding: 0;
+			display: flex;
+			flex-direction: column;
+			position: absolute;
+			bottom: 15px;
+			right: 5px;
+			.media-breakpoint-up(@xl; {
+				bottom: 25px;
+				right: 25px;
+			});
+			li{
+				margin: 10px 0 0 0;
+			 	button{
+			 		padding: 0;
+			 		border: 0;
+			 		display: block;
+					background-color: fadeout(@white, 80%);
+			 		width: 15px;
+			 		height: 15px;
+			 		font-size: 0;
+			 		line-height: 0;
+			 		transition: @trs-site;
+			 		cursor: pointer;		 		
+					&::before{
+						display: none;
+					}
+			 	}
+				&.slick-active{
+					button{
+						background-color: @white;
+					}
 				}
 			}
 		}
@@ -1424,9 +1438,6 @@
 					}
 				}
 			}
-
-		}
-		.is--dots-blue &{
 
 		}
 	}
