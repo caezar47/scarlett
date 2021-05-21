@@ -546,6 +546,7 @@
 			&.is--white{
 				background-color: @primary-p;
 				color: @white;
+				.card__item:hover &,
 				&:hover{
 					background-color: fadeout(@primary-p, 10%);
 				}
@@ -553,13 +554,13 @@
 			&.is--blue{
 				color: @primary-p;
 				background-color: @white;
+				.card__item:hover &,
 				&:hover{
 					background-color: fadeout(@white, 10%);
 				}
 
 			}
 		}
-
 	}
 }
 .form__{
