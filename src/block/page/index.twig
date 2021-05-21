@@ -11,31 +11,31 @@
 		</div>
 		<div>
 			<div data-slick-banner-white class="is--dots-white">
-			{% for w in banner_white %}
-				<div class="card__item  {{banner_mod}}  {{w.mod}}">
+			{% for w in banner_white %}				
+				<{% if w.link %}a href="{{w.link}}"{% else %}div{% endif %} class="card__item  {{banner_mod}}  {{w.mod}}">
 					{% if w.btn %}
-					<a class="card__btn  {{banner_mod}}  {{w.mod}}">{{w.btn}}</a>
+					<p class="card__btn  {{banner_mod}}  {{w.mod}}">{{w.btn}}</p>
 					{% endif %}
 					<picture class="card__preview  {{banner_mod}}  {{w.mod}}">
 						<img src="{{w.img}}" class="img-responsive" alt="">
 					</picture>
 					<div class="card__heading  {{banner_mod}}  {{w.mod}}">{{w.name}}</div>
 					<div class="card__note  {{banner_mod}}  {{w.mod}}">{{w.note}}</div>
-				</div>
+				</{% if w.link %}a{% else %}div{% endif %}>
 			{% endfor %}
 			</div>
 			<div data-slick-banner-blue>
 			{% for b in banner_blue %}
-				<div class="card__item  {{banner_mod}}  {{b.mod}}">
+				<{% if b.link %}a href="{{b.link}}"{% else %}div{% endif %} class="card__item  {{banner_mod}}  {{b.mod}}">
 					{% if b.btn %}
-					<a class="card__btn  {{banner_mod}}  {{b.mod}}">{{b.btn}}</a>
+					<p class="card__btn  {{banner_mod}}  {{b.mod}}">{{b.btn}}</p>
 					{% endif %}
 					<picture class="card__preview  {{banner_mod}}  {{b.mod}}">
 						<img src="{{b.img}}" class="img-responsive" alt="">
 					</picture>
 					<div class="card__heading  {{banner_mod}}  {{b.mod}}">{{b.name}}</div>
 					<div class="card__note  {{banner_mod}}  {{b.mod}}">{{b.note}}</div>
-				</div>
+				</{% if b.link %}a{% else %}div{% endif %}>
 			{% endfor %}
 			</div>
 		</div>
