@@ -20,10 +20,11 @@ $(function() {
 		pauseOnHover: false,
 		swipe: false,
 		touchMove: false,
+        pauseOnHover: true,
 		//fade: true, 	
 		autoplay: true,
 		speed: 1000,
-		autoplaySpeed: 7000,
+		autoplaySpeed: 10000,
 	});
 	banner_white.slick({
 		slidesToShow: 1,
@@ -35,10 +36,11 @@ $(function() {
 		pauseOnHover: false,
 		swipe: false,
 		touchMove: false,
+        pauseOnHover: true,
 		fade: true, 	
 		autoplay: true,
 		speed: 1000,
-		autoplaySpeed: 7000,
+		autoplaySpeed: 10000,
 	});
 	banner_blue.slick({
 		slidesToShow: 1,
@@ -50,10 +52,11 @@ $(function() {
 		pauseOnHover: false,
 		swipe: false,
 		touchMove: false,
+        pauseOnHover: true,
 		fade: true, 	
 		autoplay: true,
 		speed: 1000,
-		autoplaySpeed: 7000,
+		autoplaySpeed: 10000,
 	});
 
 	slider.slick({

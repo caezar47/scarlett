@@ -5,6 +5,15 @@
 				{% for value in banner_list %}
 					<a href="{{value.link}}" class="{{content_prefix}}preview  {{content_mod}}">
 						<img src="{{value.img}}" class="img-responsive" alt="">
+						<picture>
+							{% if value.pr %}
+								<img src="{{value.pr}}" class="img-responsive" alt="">
+							{% endif %}
+						</picture>
+						<div>
+							<h5>{{value.heading}}</h5>
+							<div>{{value.note}}</div>
+						</div>
 					</a>
 				{% endfor %}
 			</div>

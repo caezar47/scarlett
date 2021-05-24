@@ -45,7 +45,11 @@
 	    		}
     		}
     		.media-breakpoint-up(@md; {
-				height: 70vh;
+				
+    		});
+    		.media-breakpoint-up(@lg; {
+			   	height: 43vw;
+    			max-height: 800px;
     			& > *:nth-child(1){
     				width: 61%;
     			}
@@ -58,9 +62,6 @@
 	    				max-width: initial;
 		    		}
     			}
-    		});
-    		.media-breakpoint-up(@xl; {
-				height: 67.5vh;
     		});
 		}
 	}
@@ -207,11 +208,99 @@
 		&.is--index-banner{
 			display: block;
 			width: 100%;
-			img{
+			position: relative;
+			&::before{
+				content: '';
+				position: absolute;
+				z-index: 1;
+				top: 0;
+				left: 0;
+				bottom: 0;
+				width: 50%;
+				background: linear-gradient(180deg, 
+					fadeout(@white, 100%) 0%,
+					fadeout(@white, 100%) 25%,
+					fadeout(@white, 70%) 25%,
+					fadeout(@white, 70%) 50%, 
+					fadeout(@white, 100%) 50%,
+					fadeout(@white, 100%) 75%,
+					fadeout(@white, 70%) 75%,
+					fadeout(@white, 70%) 100%,
+					);
+			}
+			&::after{
+				content: '';
+				position: absolute;
+				z-index: 1;
+				top: 0;
+				right: 0;
+				bottom: 0;
+				width: 50%;
+				background: linear-gradient(180deg, 
+					fadeout(@white, 70%) 0%,
+					fadeout(@white, 70%) 25%,
+					fadeout(@white, 100%) 25%,
+					fadeout(@white, 100%) 50%, 
+					fadeout(@white, 70%) 50%,
+					fadeout(@white, 70%) 75%,
+					fadeout(@white, 100%) 75%,
+					fadeout(@white, 100%) 100%,
+					);
+			}
+			& > picture{
+				position: absolute;
+				top: 0;
+				left: 0;
+				bottom: 0;
+				background-color: @primary-p;
+				width: 40%;
+				padding: 10px 5px;
+				img{
+					margin: 0 auto;
+					position: relative;
+					z-index: 2;
+				}
+				.media-breakpoint-up(@md; {
+					padding: 10% 5px;
+				});
+			}
+			& > img{
 				width: 100%;
 				height: 100%;
 				object-fit: cover;
 				object-position: center;
+			}
+			& > div{
+				color: @white;
+				position: absolute;
+				z-index: 3;
+				bottom: 0px;
+				left: 0px;
+				padding: 5px 15px;
+				font-family: @site_ff_300;
+				font-size: 12px;
+				line-height: 17px;
+				max-width: 320px;
+				h5{
+					margin: 0 0 5px 0;
+					font-family: @site_ff_700;
+					text-transform: uppercase;
+					font-size: 18px;
+					line-height: 110%;
+				}
+				.media-breakpoint-up(@sm; {					
+					width: 40%;
+				});
+				.media-breakpoint-up(@md; {
+					padding: 0 0 40px 40px;
+					font-size: 14px;
+					h5{
+						margin: 0 0 10px 0;
+						font-size: 22px;
+						line-height: 29px;
+					}
+				});
+
 			}
 		}
 		&.is--promo{
