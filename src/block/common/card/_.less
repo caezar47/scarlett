@@ -259,12 +259,16 @@
 			padding: 12px 14px;
 			transition: @trs-site;
 			cursor: pointer;
+			.card__item:hover &,
+			&:hover{
+				box-shadow: 0 0 10px fadeout(@black, 50%);
+			}
 			&.is--white{
 				background-color: @primary-p;
 				color: @white;
 				.card__item:hover &,
 				&:hover{
-					background-color: fadeout(@primary-p, 10%);
+					//background-color: fadeout(@primary-p, 10%);
 				}
 			}
 			&.is--blue{
@@ -272,9 +276,8 @@
 				background-color: @white;
 				.card__item:hover &,
 				&:hover{
-					background-color: fadeout(@white, 10%);
+					//background-color: fadeout(@white, 10%);
 				}
-
 			}
 		}
 	}

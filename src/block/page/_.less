@@ -206,6 +206,7 @@
 	}
 	&preview{
 		&.is--index-banner{
+			text-decoration: none;
 			display: block;
 			width: 100%;
 			position: relative;
@@ -247,61 +248,79 @@
 					fadeout(@white, 100%) 100%,
 					);
 			}
-			& > picture{
-				position: absolute;
-				top: 0;
-				left: 0;
-				bottom: 0;
+			.is--banner{
 				background-color: @primary-p;
-				width: 40%;
-				padding: 10px 5px;
+				width: 100%;
+				padding: 30px 25px;
+				display: flex;
+				flex-direction: column;
+				align-items: flex-start;
 				img{
-					margin: 0 auto;
+					margin: auto auto 0;
 					position: relative;
 					z-index: 2;
+				}				
+				& > div{
+					color: @white;
+					font-family: @site_ff_300;
+					font-size: 12px;
+					line-height: 17px;
+					margin-bottom: 10px;
+					h5{
+						margin: 0 0 5px 0;
+						font-family: @site_ff_700;
+						text-transform: uppercase;
+						font-size: 18px;
+						line-height: 110%;
+					}
 				}
-				.media-breakpoint-up(@md; {
-					padding: 10% 5px;
-				});
+				.is--btn{
+					margin-top: 25px;
+					font-weight: 700;
+					font-family: @site_ff_700;
+					font-size: 14px;
+					line-height: 120%;
+					color: #00C4D9;
+					background-color: @white;
+					//position: absolute;
+					//bottom: 30px;
+					//left: 25px;
+					padding: 12px 13px;
+					transition: @trs-site;
+				}
 			}
 			& > img{
+				display: none;
 				width: 100%;
 				height: 100%;
 				object-fit: cover;
 				object-position: center;
 			}
-			& > div{
-				color: @white;
-				position: absolute;
-				z-index: 3;
-				bottom: 0px;
-				left: 0px;
-				padding: 5px 15px;
-				font-family: @site_ff_300;
-				font-size: 12px;
-				line-height: 17px;
-				max-width: 320px;
-				h5{
-					margin: 0 0 5px 0;
-					font-family: @site_ff_700;
-					text-transform: uppercase;
-					font-size: 18px;
-					line-height: 110%;
-				}
-				.media-breakpoint-up(@sm; {					
-					width: 40%;
-				});
-				.media-breakpoint-up(@md; {
-					padding: 0 0 40px 40px;
-					font-size: 14px;
-					h5{
-						margin: 0 0 10px 0;
-						font-size: 22px;
-						line-height: 29px;
-					}
-				});
 
+			&:hover .is--btn{
+				box-shadow: 0 0 10px fadeout(@black, 50%);
 			}
+			.media-breakpoint-up(@md; {	
+				& > img{display: block;}		
+				.is--banner{
+					position: absolute;
+					top: 0;
+					left: 0;
+					bottom: 0;	
+					width: 50%;
+					& > div{
+						font-size: 14px;
+						h5{
+							margin: 0 0 10px 0;
+							font-size: 22px;
+							line-height: 29px;
+						}
+					}
+				}
+			});
+			.media-breakpoint-up(@xl; {	
+				.is--banner{width: 40%;}
+			});
 		}
 		&.is--promo{
 			&-header{
