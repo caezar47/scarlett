@@ -33,18 +33,28 @@
     			width: 100%; 
     			height: 100%;
     			display: flex;
+    			flex-wrap: wrap;
     			.slick-list, .slick-track{
     				height: 100%;
     			}
 	    		& > *:nth-child(1){
-	    			max-width: 50%;
+	    			max-width: 100%;
 	    			background-color: @white;
 	    		}
 	    		& > *:nth-child(2){
-	    			max-width: 50%;
+	    			max-width: 100%;
 	    		}
     		}
     		.media-breakpoint-up(@md; {
+	    		& > *:nth-child(2){
+	    			flex-wrap: nowrap;
+		    		& > *:nth-child(1){
+		    			max-width: 50%;
+		    		}
+		    		& > *:nth-child(2){
+		    			max-width: 50%;
+		    		}
+	    		}
 				
     		});
     		.media-breakpoint-up(@lg; {
@@ -217,7 +227,7 @@
 				top: 0;
 				left: 0;
 				bottom: 0;
-				width: 50%;
+				width: 100%;
 				background: linear-gradient(180deg, 
 					fadeout(@white, 100%) 0%,
 					fadeout(@white, 100%) 25%,
@@ -229,7 +239,7 @@
 					fadeout(@white, 70%) 100%,
 					);
 			}
-			&::after{
+			/*&::after{
 				content: '';
 				position: absolute;
 				z-index: 1;
@@ -247,7 +257,7 @@
 					fadeout(@white, 100%) 75%,
 					fadeout(@white, 100%) 100%,
 					);
-			}
+			}*/
 			.is--banner{
 				background-color: @primary-p;
 				width: 100%;
@@ -259,6 +269,7 @@
 					margin: auto auto 0;
 					position: relative;
 					z-index: 2;
+					max-height: 250px;
 				}				
 				& > div{
 					color: @white;
@@ -301,13 +312,24 @@
 				box-shadow: 0 0 10px fadeout(@black, 50%);
 			}
 			.media-breakpoint-up(@md; {	
-				& > img{display: block;}		
+				& > img{
+					display: block;
+					width: 50%;
+					margin-left: auto;
+				}
+
+				&::before{				
+					width: 50%;
+				}		
 				.is--banner{
 					position: absolute;
 					top: 0;
 					left: 0;
 					bottom: 0;	
 					width: 50%;
+					img{
+						max-height: initial;
+					}
 					& > div{
 						font-size: 14px;
 						h5{
@@ -318,8 +340,25 @@
 					}
 				}
 			});
-			.media-breakpoint-up(@xl; {	
-				.is--banner{width: 40%;}
+			.media-breakpoint-up(@xl; {
+				&::before{				
+					width: 40%;
+				}	
+				.is--banner{
+					width: 40%;			
+					& > div{
+						font-size: 18px;
+						line-height: 120%;
+						h5{
+							font-size: 22px;
+							line-height: 110%;
+						}
+					}
+				}
+				& > img{
+					width: 60%;
+					margin-left: auto;
+				}	
 			});
 		}
 		&.is--promo{
@@ -573,11 +612,18 @@
 			margin-bottom: 25px;
 			img{
 				margin: 0 auto;
+				max-height: 180px;
 			}
+			.media-breakpoint-up(@md; {
+				img{
+					max-height: initial;
+				}
+			});
 			.media-breakpoint-up(@lg; {
 				height: 70%;
 				img{
 					height: 100%;
+
 				}
 			});
 		}

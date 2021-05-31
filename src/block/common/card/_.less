@@ -181,11 +181,18 @@
 			margin-bottom: 25px;
 			img{
 				margin: 0 auto;
+				max-height: 180px;
 			}
+			.media-breakpoint-up(@md; {
+				img{
+					max-height: initial;
+				}
+			});
 			.media-breakpoint-up(@lg; {
 				height: 70%;
 				img{
 					height: 100%;
+
 				}
 			});
 		}
