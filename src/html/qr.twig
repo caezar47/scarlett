@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="ru-RU"> 
+    <head>
+        {% include "../block/common/head/head.twig" with {title:"Главная"}  %}
+    </head>
+    <body>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vue-qrcode-reader@2.0.3/dist/vue-qrcode-reader.css">
+        {% include "../block/page/index.twig" with {
+            view: "qrcode",
+        } %}
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js'></script>
+        <script src='https://cdn.jsdelivr.net/npm/vue-qrcode-reader@2.0.3/dist/vue-qrcode-reader.browser.js'></script>
+        <script>
+            const QrcodeDropZone = window.VueQrcodeReader.QrcodeDropZone;
+            new Vue({
+                el: '#app',
+                components: {
+                    'qrcode-drop-zone':QrcodeDropZone,
+                },
+                data: {
+                    result: null,
+                    error: null,
+                    dragover: false
+                },
+                methods: {
+                    async onDetect (promise) {
+                        try {
+                            const { content } = await promise
+                            this.result = content
+                            this.error = null
+                        } catch (error) {
+                            if (error.name === 'DropImageFetchError') {
+                                this.error = 'Sorry, you can\'t load cross-origin images :/'
+                            } else if (error.name === 'DropImageDecodeError') {
+                                this.error = 'Ok, that\'s not an image. That can\'t be decoded.'
+                                } else {
+                                    this.error = 'Ups, what kind of error is this?! ' + error.message
+                                }
+                            }
+                    },
+
+                    logErrors (promise) {
+                      promise.catch(console.error)
+                    },
+
+                    onDragOver (isDraggingOver) {
+                      this.dragover = isDraggingOver
+                    }
+                },
+            });
+        </script>
+
+        <style>
+        .drop-area {
+          height: 300px;
+          color: #fff;
+          text-align: center;
+          font-weight: bold;
+          padding: 10px;
+
+          background-color: rgba(0,0,0,.5);
+        }
+
+        .dragover {
+          background-color: rgba(0,0,0,.8);
+        }
+
+        .drop-error {
+          color: red;
+          font-weight: bold;
+        }
+        </style>
+
+
+    </body>
+</html> 

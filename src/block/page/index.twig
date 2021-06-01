@@ -52,6 +52,23 @@
 		</div>
 	</section>
 {% endif %}
+{% if view == "qrcode" %}
+	<section style="margin: 50px auto; max-width: 1200px;">
+		<div id="app">
+			<p class="decode-result">Результат: <b>{{ result }}</b></p>
+
+			<p v-if="error !== null" class="drop-error">{{ error }}</p>
+
+			<qrcode-drop-zone @detect="onDetect" @dragover="onDragOver" @init="logErrors">
+				<div class="drop-area" :class="{ 'dragover': dragover }">
+					Перетащите сюда чек с qr-кодом
+				</div>
+			</qrcode-drop-zone>
+		</div>
+
+		
+	</section>
+{% endif %}
 {% if view == "header" %}
 	<section class="{{content_prefix}}panel  {{content_mod}}">
 		<picture class="{{content_prefix}}preview  {{content_mod}}">
