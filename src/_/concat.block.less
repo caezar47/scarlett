@@ -60,6 +60,7 @@
     		.media-breakpoint-up(@lg; {
 			   	height: 43vw;
     			max-height: 800px;
+    			min-height: 500px;
     			& > *:nth-child(1){
     				width: 61%;
     			}
@@ -220,6 +221,7 @@
 			display: block;
 			width: 100%;
 			position: relative;
+			height: 470px!important;
 			&::before{
 				content: '';
 				position: absolute;
@@ -239,29 +241,11 @@
 					fadeout(@white, 70%) 100%,
 					);
 			}
-			/*&::after{
-				content: '';
-				position: absolute;
-				z-index: 1;
-				top: 0;
-				right: 0;
-				bottom: 0;
-				width: 50%;
-				background: linear-gradient(180deg, 
-					fadeout(@white, 70%) 0%,
-					fadeout(@white, 70%) 25%,
-					fadeout(@white, 100%) 25%,
-					fadeout(@white, 100%) 50%, 
-					fadeout(@white, 70%) 50%,
-					fadeout(@white, 70%) 75%,
-					fadeout(@white, 100%) 75%,
-					fadeout(@white, 100%) 100%,
-					);
-			}*/
 			.is--banner{
 				background-color: @primary-p;
 				width: 100%;
-				padding: 30px 25px;
+				height: 100%;
+				padding: 20px 25px;
 				display: flex;
 				flex-direction: column;
 				align-items: flex-start;
@@ -311,7 +295,10 @@
 			&:hover .is--btn{
 				box-shadow: 0 0 10px fadeout(@black, 50%);
 			}
-			.media-breakpoint-up(@md; {	
+			.media-breakpoint-up(@sm; {
+			});
+			.media-breakpoint-up(@md; {
+				height: inherit!important;
 				& > img{
 					display: block;
 					width: 50%;
@@ -327,15 +314,13 @@
 					left: 0;
 					bottom: 0;	
 					width: 50%;
-					img{
-						max-height: initial;
-					}
+					height: initial!important;
 					& > div{
 						font-size: 14px;
 						h5{
 							margin: 0 0 10px 0;
-							font-size: 22px;
-							line-height: 29px;
+							font-size: 18px;
+							line-height: 27px;
 						}
 					}
 				}
@@ -347,6 +332,21 @@
 				.is--banner{
 					width: 40%;			
 					& > div{
+						
+					}
+				}
+				& > img{
+					width: 60%;
+					margin-left: auto;
+				}
+			});
+			.media-breakpoint-up(@xxl; {
+				padding: 30px 25px;
+				.is--banner{
+					img{
+						max-height: initial;
+					}		
+					& > div{
 						font-size: 18px;
 						line-height: 120%;
 						h5{
@@ -354,10 +354,6 @@
 							line-height: 110%;
 						}
 					}
-				}
-				& > img{
-					width: 60%;
-					margin-left: auto;
 				}	
 			});
 		}
@@ -867,6 +863,7 @@
     	font-size: 14px;
     	line-height: 16px;
     	border-radius: 0;
+    	box-sizing: border-box;
     	transition: @trs-site;
 		&::-moz-placeholder{
 			color: #d6d6d6;
@@ -1134,10 +1131,14 @@
 			.media-breakpoint-up(@md; {
 				overflow-y: hidden;
 			});
-		}		
-		//display: block;
-		//opacity: 1;
-		//background: @black;
+		}
+		/*
+		&#modal-juicer{
+			display: block;
+			opacity: 1;
+			background: @black;
+		}
+		*/		
 	}
 	&dialog {
 		transition: all 0.5s;
@@ -1164,9 +1165,17 @@
 		&.is--modal-hyundai{
 			max-width: 600px;
 		}
-		//top: 0;
-		//left: 0;
-		//transform: translateY(0);
+		&.is--modal-juicer{
+			max-width: 460px;
+			background-color: fadeout(@white, 100%);
+		}
+		/*
+		#modal-juicer &{
+			top: 0;
+			left: 0;
+			transform: translateY(0);
+		}
+		*/
 	}
 	&body {
 		position: relative;
@@ -1178,6 +1187,9 @@
 			padding: 28px;
 			background-repeat: no-repeat;
 			background-position: center;
+		}
+		&.is--modal-juicer{
+			padding: 0;
 		}
 	}
 	&preview{		
@@ -1198,9 +1210,13 @@
 			padding: 38px 15px;
 			max-width: 270px;
 		}
+		&.is--modal-juicer{
+			background-color: fadeout(@white, 100%);
+		}
 	}
 	&btn-close{
 		.btn-clearfix();
+		cursor: pointer;
 	    position: absolute;
 	    z-index: 5; 
 		padding: 5px;
@@ -1252,6 +1268,11 @@
 			object-position: center;
 			object-fit: cover;
 		}
+		&.is--modal-juicer{
+			max-width: 376px;
+			margin: 0 auto;
+			height: auto;
+		}
 	}
 	&heading{
 		text-transform: uppercase;
@@ -1279,6 +1300,16 @@
 			color: #595a5c;
 			margin-bottom: 37px;
 		}
+		&.is--modal-juicer{
+			color: @white;
+			font-size: 31px;
+			line-height: 33px;
+			background-color: #c4007a;
+			margin: -25px 0 0;
+		    padding: 7px 0;
+		    z-index: 1;
+		    position: relative;
+		}
 	}
 	&label{
 		color: #585858;
@@ -1300,12 +1331,14 @@
 	bottom: -1px;
 	left: 0;
 	z-index: 940;
-	background-color: @modal_backdrop;
+	//background-color: @modal_backdrop;
+	background-color: @black;
 	&.fade { 
 		opacity: 0;
 	}
 	&.in {
-		opacity: @modal_backdrop_fade;
+		//opacity: @modal_backdrop_fade;
+		opacity: 0.7;
 	}
 }
 .slick { 

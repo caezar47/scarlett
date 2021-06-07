@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="ru-RU"> 
+    <head>
+        {% include "../block/common/head/head.twig" with {
+            title:"Промо 2021",
+            style: 'juicer'
+        }  %}
+    </head>
+    <body>
+        {% include "../block/page/block.twig" with {
+            view:               "promo_header",
+
+            content_prefix:     prefix.juicer, 
+            content_mod:        "",  
+
+            img:                [path.img,"/promo/juicer/banner-lg.jpg"].join(''),
+            img_xs:             [path.img,"/promo/juicer/banner-xs.jpg"].join(''),
+        } %}
+
+        {% include "../block/page/block.twig" with {
+            view:               "promo_step",
+
+            content_prefix:     prefix.juicer, 
+            content_mod:        "is--step",  
+            
+            list:[
+                {
+                    name:"Купи",
+                    note:"любую соковыжималку Scarlett и отсканируй QR-код на коробке",
+                    img:[path.img,"/promo/juicer/step1.png"].join(''),
+                },
+                {
+                    name:"Загрузи",
+                    note:"чек на сайт и оставь свой электронный адрес",
+                    img:[path.img,"/promo/juicer/step2.png"].join(''),
+                },
+                {
+                    name:"Получи",
+                    note:"гарантированный приз и прими участие в розыгрышах суперпризов - наборов техники HYUNDAI",
+                    img:[path.img,"/promo/juicer/step3.png"].join(''),
+                },
+            ],
+        } %}
+
+        {% include "../block/page/block.twig" with {
+            view:               "promo_step",
+
+            content_prefix:     prefix.juicer, 
+            content_mod:        "is--prizes",  
+            heading:            "Призы",  
+            
+            list:[
+                {
+                    name:"Гарантированные ",
+                    note:"скидки на покупку бытовой техники",
+                    img:[path.img,"/promo/juicer/prizes1.png"].join(''),
+                },
+                {
+                    name:"Еженедельные",
+                    note:"3 победителя каждую неделю",
+                    img:[path.img,"/promo/juicer/prizes2.png"].join(''),
+                },
+                {
+                    name:"Ежемесячные ",
+                    note:"1 победитель каждый месяц",
+                    img:[path.img,"/promo/juicer/prizes3.png"].join(''),
+                },
+            ],
+        } %}
+
+        {% include "../block/page/block.twig" with {
+            view:               "promo_form",
+            content_prefix:     prefix.juicer, 
+            content_mod:        "is--form",
+            heading:            "Форма регистрации чека",                              
+            form_prefix:        prefix.form,                     
+        } %} 
+
+        <section class="{{prefix.juicer}}section  is--winner-wrap">
+            <div class="{{prefix.juicer}}container  container  is--winner-wrap">
+                {% include "../block/page/block.twig" with {
+                    view:               "promo_step",
+                    container:          "false",
+
+                    content_prefix:     prefix.juicer, 
+                    content_mod:        "is--prizes-winner",  
+                    
+                    list:[
+                        {
+                            name:"призы недели",
+                            note:"<b>Весы кухонные Scarlett</b><br> 3 штуки - 3 победителя",
+                            label:"Победитель будет определен <b>12.07.2021</b>",
+                            img:[path.img,"/promo/juicer/prizes-week.png"].join(''),
+                        },
+                        {
+                            name:"приз июля",
+                            note:"<b>Набор техники HYUNDAI:</b><br> <small>пылесос-робот wi-fi,<br> пылесос вертикальный моющий,<br> кондиционер, увлажнитель,<br> конвектор</small>",
+                            label:"Победитель будет определен <b>01.08.2021</b>",
+                            img:[path.img,"/promo/juicer/prizes-month.png"].join(''),
+                        },
+                        
+                    ],
+                } %}
+                {% include "../block/page/block.twig" with {
+                    view:               "promo_step",
+                    container:          "false",
+
+                    content_prefix:     prefix.juicer, 
+                    content_mod:        "is--winner", 
+
+                    heading:            "победители",             
+                    
+                    table: [
+                        {
+                            thead: [
+                                {
+                                    list: [
+                                        {
+                                            th: 'ИМЯ',
+                                        },
+                                        {
+                                            th: 'E-MAIL',
+                                        },
+                                        {
+                                            th: 'ТЕЛЕФОН',
+                                        },
+                                        {
+                                            th: 'ПРИЗ',
+                                        },
+                                        {
+                                            th: 'ДАТА',
+                                        },
+                                    ]
+                                }
+                            ],
+                            tbody:[
+                                {
+                                    list: [
+                                        {
+                                            td: 'Людмила',
+                                        },
+                                        {
+                                            td: 'lus***@***.ru',
+                                        },
+                                        {
+                                            td: '+7 (928) 324-**-**',
+                                        },
+                                        {
+                                            td: 'Еженедельный: весы кухонные',
+                                        },
+                                        {
+                                            td: '01 июня 2021',
+                                        },
+                                    ]
+                                }                            
+                            ]
+                        },
+                    ]
+                } %}
+            </div>
+        </section>
+
+
+        {% include "../block/page/block.twig" with {
+            view:               "promo_step",
+
+            content_prefix:     prefix.juicer, 
+            content_mod:        "is--juicer",  
+            heading:            "выбери свою соковыжималку",  
+            
+            list:[
+                {
+                    img:[path.img,"/promo/juicer/juicer-item1.png"].join(''),
+                    note:"Польза и заряд витаминов каждый день",
+                    btn:"выбрать",
+                    btn_color:"#73ac40",
+                },
+                {
+                    img:[path.img,"/promo/juicer/juicer-item2.png"].join(''),
+                    note:"Легко собирается и прочно фиксируется",
+                    btn:"выбрать",
+                    btn_color:"#c4007a",
+                },
+                {
+                    img:[path.img,"/promo/juicer/juicer-item3.png"].join(''),
+                    note:"Легко моется под струей воды или в посудомойке ",
+                    btn:"выбрать",
+                    btn_color:"#e7c23f",
+                },
+                {
+                    img:[path.img,"/promo/juicer/juicer-item4.png"].join(''),
+                    note:"3 кг твердых овощей и фруктов за минуту",
+                    btn:"выбрать",
+                    btn_color:"#c21477",
+                },
+                
+            ],
+        } %}
+        {% include "../block/common/modals/tpl.twig" with {
+            prefix: "modal__", 
+            mod:    "is--modal-juicer", 
+            ID:     "modal-juicer",
+            img:    [path.img,"/promo/juicer/modal-img.png"].join(''),
+            name:   'Спасибо за&nbsp;регистрацию чека!',
+        } %}
+
+        {% include "../block/common/script/script.twig" with {
+            view :"modal"
+        }%}
+    </body>
+</html> 

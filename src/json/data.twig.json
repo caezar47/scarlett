@@ -39,6 +39,7 @@
 		"contacts":"./contacts.html"
 	},
 	"prefix":{
+		"juicer":"juicer__",
 		"content":"content-block__",
 		"heading":"page-header__",
 		"form":"form__",

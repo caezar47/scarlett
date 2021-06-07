@@ -1,0 +1,223 @@
+{% if view == "promo_header" %}
+	<section class="{{content_prefix}}section  {{content_mod}}">
+		<picture class="{{content_prefix}}img  {{content_mod}}">
+			{% if img_xs %}
+			<source media="(max-width: 500px)" srcset="{{img_xs}}">
+			{% endif %}
+			<img src="{{img}}" class="img-responsive" alt="">
+		</picture>
+	</section>
+{% endif %}
+{% if view == "promo_step" %}
+	<section class="{{content_prefix}}section  {{content_mod}}">
+		{% if container != "false" %}
+		<div class="{{content_prefix}}container  container  {{content_mod}}">
+		{% endif %}
+			{% if heading %}
+				<h2 class="{{content_prefix}}heading  {{content_mod}}">{{heading}}</h2>
+			{% endif %}
+			{% if list %}
+			<div class="{{content_prefix}}row  grid__row  {{content_mod}}">
+				{% for value in list %}
+					<div class="{{content_prefix}}card  {{content_mod}}">
+						<picture class="{{content_prefix}}img  {{content_mod}}">
+							<img src="{{value.img}}" class="img-responsive" alt="">
+						</picture>
+						<div>
+							<p class="{{content_prefix}}name  {{content_mod}}">{{value.name}}</p>
+							<div class="{{content_prefix}}note  {{content_mod}}">{{value.note}}</div>
+							{% if value.label %}
+							<div class="{{content_prefix}}label  {{content_mod}}">{{value.label}}</div>
+							{% endif %}
+							{% if value.btn %}
+							<div class="{{content_prefix}}btn  {{content_mod}}"><a href="#" style="background-color: {{value.btn_color}}">{{value.btn}}</a></div>
+							{% endif %}
+						</div>
+
+					</div>
+				{% endfor %}
+			</div>
+			{% endif %}
+			{% if table %}
+				<div class="{{content_prefix}}table-responsive">
+					<table class="{{content_prefix}}table {{content_mod}}">
+						{% for t in table %}
+							{% if t.thead %}
+								<thead>
+									{% for thead in t.thead %}
+										<tr>
+											{% for th in thead.list %}
+											<th>{{th.th}}</th>
+											{% endfor %}
+										</tr>
+									{% endfor %}
+								</thead>
+							{% endif %}
+							{% if t.tbody %}
+								<tbody>
+									{% for tbody in t.tbody %}
+										<tr>
+											{% for td in tbody.list %}
+											<td>{{td.td}}</td>
+											{% endfor %}
+										</tr>
+									{% endfor %}
+								</tbody>
+							{% endif %}
+						{% endfor %}
+					</table>
+				</div>
+				<div class="{{content_prefix}}btn  {{content_mod}}">
+					<button type="buttom">Все победители</button>
+				</div>
+			{% endif %}
+		{% if container != "false" %}
+		</div>
+		{% endif %}
+	</section>
+{% endif %}
+{% if view == "promo_form" %}
+	<section class="{{content_prefix}}section  {{content_mod}}">
+		<div class="{{content_prefix}}container  container  {{content_mod}}">
+			<h2 class="{{content_prefix}}heading  {{content_mod}}">{{heading}}</h2>
+			
+			<form action="#" class="{{content_prefix}}form  {{content_mod}}"  data-form-validation>
+				<div class="{{content_prefix}}row  {{content_mod}}">				
+					{% include "../common/form/elem-tpl.twig" with {view: "input", prefix:form_prefix, mod:'', list: [
+						{
+							"type":"text",
+							"validate":"validate[required, custom[onlyLetterSp]]",
+							"placeholder":"Ваше имя",
+						},
+						{
+							"type":"text", 
+							"validate":"validate[required]",
+							"placeholder":"Наименование магазина",
+						},
+						{
+							"view":"date", 
+							"type":"text", 
+							"validate":"validate[required]",
+							"placeholder":"Дата покупки",
+						},
+						{
+							"type":"email",
+							"validate":"validate[required, custom[email]]",
+							"placeholder":"E-mail",
+						}
+					]} %}
+					<div data-grid-file>				
+						{% include "../common/form/elem-tpl.twig" with {
+							view: "file", 
+							prefix:prefix.form, 
+							mod:'',
+							color:color,
+							validate:"validate[required]",
+							name:"Прикрепить фото чека",
+						}%}
+					</div>
+					<div data-grid-agreement>				
+						{% include "../common/form/elem-tpl.twig" with {
+							view: "agreement", 
+							prefix:form_prefix, 
+							mod:'',
+							validate:"validate[required]",
+							name:'<span>Cогласен с <a target="_blank" href="/about/contacts/confidentional/">правилами сайта обработки персональных данных</a></span>',
+						}%}
+					</div>
+					<div data-grid-submit>	
+						<button type="submit" class="{{form_prefix}}submit">Отправить</button>	
+					</div>
+					<div data-grid-link>	
+						<a href="#" class="{{form_prefix}}link">Полные правила акции</a>	
+					</div>
+				</div>
+			</form>
+		</div>
+	</section>
+{% endif %}
+
+
+
+{% if view == "slider" %}
+	<section class="{{content_prefix}}panel  {{content_mod}}">
+		<div class="{{content_prefix}}container  container  {{content_mod}}">
+			<h2 class="{{content_prefix}}heading  {{content_mod}}">{{heading}}</h2>
+			<p class="{{content_prefix}}text  {{content_mod}}">{{label}}</p>
+		</div>
+		<div class="{{content_prefix}}slider  {{content_mod}}" data-slick-slider>
+			{% for value in list %}		
+			<div class="{{prefix.card}}item  {{content_mod}}"><img src="{{value.img}}" class="img-responsive" alt=""></div> 
+			{% endfor %}
+		</div>
+	</section>
+{% endif %}
+{% if view == "modals" %}
+	<section class="{{content_prefix}}panel  {{content_mod}}">
+		<div class="{{content_prefix}}container  container  {{content_mod}}">
+			<div style="margin-bottom: 10px;">
+				<a href="#" class="form__link" data-toggle="modal" data-target="#modal-timberk">Скидки -50% timberk</a>	
+			</div>
+			<div style="margin-bottom: 10px;">
+				<a href="#" class="form__link" data-toggle="modal" data-target="#modal-hyundai">Скидки -50% hyundai</a>	
+			</div>
+		</div>
+	</section>
+{% endif %}
+{% if view == "insta" %}
+	<section class="{{content_prefix}}panel  {{content_mod}}">
+		<div class="{{content_prefix}}container  container  {{content_mod}}">
+			<div class="{{content_prefix}}row  {{content_mod}}">
+				<div>
+					<a href="https://www.instagram.com/scarlett.club/" target="_blank"><img src="{{img}}" alt=""></a>
+				</div>
+				<div class="{{content_prefix}}heading  {{content_mod}}">
+					Мы в Instagram <a href="https://www.instagram.com/scarlett.club/" target="_blank">@scarlett.club</a>
+				</div>
+				<div>
+					<a class="{{content_prefix}}btn  {{content_mod}}" href="https://www.instagram.com/scarlett.club/" target="_blank">Подписаться</a>
+				</div>
+			</div>
+		</div>
+		<div class="{{content_prefix}}container  container  {{content_mod}}-slider">
+			<div class="{{content_prefix}}slider  {{content_mod}}" data-slick-insta>
+				{% for value in list %}		
+				<a href="#" class="{{prefix.card}}item  {{content_mod}}  {{value.group}}">
+					<div class="{{prefix.card}}bg  {{content_mod}}"></div>
+					<img src="{{value.img}}" class="img-responsive" alt="">
+				</a> 
+				{% endfor %}
+			</div>
+		</div>
+	</section>
+{% endif %}
+{% if view == "catalog" %}
+	<section class="{{content_prefix}}panel  {{content_mod}}" >
+		<div class="{{content_prefix}}container  container  {{content_mod}}-slider">
+			<div style="max-width: 860px;">
+				<div class="{{content_prefix}}slider  {{content_mod}}" data-slick-catalog>
+					{% for value in list %}		
+					<a href="#" class="{{prefix.card}}item  {{content_mod}}  {{value.group}}">
+						<img src="{{value.img}}" class="img-responsive" alt="">
+					</a> 
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+	</section>
+{% endif %}
+{% if view == "catalog_card" %}
+	<section class="{{content_prefix}}panel  {{content_mod}}"  style="background-color: #f0f0f0;">
+		<div class="{{content_prefix}}container  container  {{content_mod}}-slider">
+			<div style="max-width: 550px;">
+				<div class="{{content_prefix}}slider  {{content_mod}}" data-slick-catalog-note>
+					{% for value in list %}		
+					<div class="{{card_prefix}}item  {{card_mod}}">
+						<img src="{{value.img}}" class="img-responsive" alt="">
+					</div> 
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+	</section>
+{% endif %}

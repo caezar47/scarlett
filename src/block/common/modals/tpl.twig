@@ -79,3 +79,22 @@
 	</div>
 </div>
 {% endif %}
+{% if ID == "modal-juicer" %}
+<div class="{{prefix}}block modals  fade  {{mod}}" id="{{ID}}" tabindex="-1" role="dialog" aria-hidden="true">
+	<div class="{{prefix}}dialog  {{mod}}">
+		<div class="{{prefix}}body  {{mod}}" >
+			<button type="button" class="{{prefix}}btn-close  modal-close" data-dismiss="modal" aria-hidden="true">
+				{% include "../svg-sprite/svg.twig" with {icon:"modal-close"} %}
+			</button>
+			<div class="{{prefix}}content  {{mod}}">
+				<div class="{{prefix}}img  {{mod}}">
+					<img src="{{img}}" class="img-responsive" alt="">
+				</div>
+				<p class="{{prefix}}heading  {{mod}}">
+					{{name}}
+				</p>
+			</div> 
+		</div>
+	</div>
+</div>
+{% endif %}

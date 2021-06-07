@@ -19,10 +19,14 @@
 			.media-breakpoint-up(@md; {
 				overflow-y: hidden;
 			});
-		}		
-		//display: block;
-		//opacity: 1;
-		//background: @black;
+		}
+		/*
+		&#modal-juicer{
+			display: block;
+			opacity: 1;
+			background: @black;
+		}
+		*/		
 	}
 	&dialog {
 		transition: all 0.5s;
@@ -49,9 +53,17 @@
 		&.is--modal-hyundai{
 			max-width: 600px;
 		}
-		//top: 0;
-		//left: 0;
-		//transform: translateY(0);
+		&.is--modal-juicer{
+			max-width: 460px;
+			background-color: fadeout(@white, 100%);
+		}
+		/*
+		#modal-juicer &{
+			top: 0;
+			left: 0;
+			transform: translateY(0);
+		}
+		*/
 	}
 	&body {
 		position: relative;
@@ -63,6 +75,9 @@
 			padding: 28px;
 			background-repeat: no-repeat;
 			background-position: center;
+		}
+		&.is--modal-juicer{
+			padding: 0;
 		}
 	}
 	&preview{		
@@ -83,9 +98,13 @@
 			padding: 38px 15px;
 			max-width: 270px;
 		}
+		&.is--modal-juicer{
+			background-color: fadeout(@white, 100%);
+		}
 	}
 	&btn-close{
 		.btn-clearfix();
+		cursor: pointer;
 	    position: absolute;
 	    z-index: 5; 
 		padding: 5px;
@@ -137,6 +156,11 @@
 			object-position: center;
 			object-fit: cover;
 		}
+		&.is--modal-juicer{
+			max-width: 376px;
+			margin: 0 auto;
+			height: auto;
+		}
 	}
 	&heading{
 		text-transform: uppercase;
@@ -164,6 +188,16 @@
 			color: #595a5c;
 			margin-bottom: 37px;
 		}
+		&.is--modal-juicer{
+			color: @white;
+			font-size: 31px;
+			line-height: 33px;
+			background-color: #c4007a;
+			margin: -25px 0 0;
+		    padding: 7px 0;
+		    z-index: 1;
+		    position: relative;
+		}
 	}
 	&label{
 		color: #585858;
@@ -185,11 +219,13 @@
 	bottom: -1px;
 	left: 0;
 	z-index: 940;
-	background-color: @modal_backdrop;
+	//background-color: @modal_backdrop;
+	background-color: @black;
 	&.fade { 
 		opacity: 0;
 	}
 	&.in {
-		opacity: @modal_backdrop_fade;
+		//opacity: @modal_backdrop_fade;
+		opacity: 0.7;
 	}
 }

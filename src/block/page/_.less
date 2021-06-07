@@ -60,6 +60,7 @@
     		.media-breakpoint-up(@lg; {
 			   	height: 43vw;
     			max-height: 800px;
+    			min-height: 500px;
     			& > *:nth-child(1){
     				width: 61%;
     			}
@@ -220,6 +221,7 @@
 			display: block;
 			width: 100%;
 			position: relative;
+			height: 470px!important;
 			&::before{
 				content: '';
 				position: absolute;
@@ -239,29 +241,11 @@
 					fadeout(@white, 70%) 100%,
 					);
 			}
-			/*&::after{
-				content: '';
-				position: absolute;
-				z-index: 1;
-				top: 0;
-				right: 0;
-				bottom: 0;
-				width: 50%;
-				background: linear-gradient(180deg, 
-					fadeout(@white, 70%) 0%,
-					fadeout(@white, 70%) 25%,
-					fadeout(@white, 100%) 25%,
-					fadeout(@white, 100%) 50%, 
-					fadeout(@white, 70%) 50%,
-					fadeout(@white, 70%) 75%,
-					fadeout(@white, 100%) 75%,
-					fadeout(@white, 100%) 100%,
-					);
-			}*/
 			.is--banner{
 				background-color: @primary-p;
 				width: 100%;
-				padding: 30px 25px;
+				height: 100%;
+				padding: 20px 25px;
 				display: flex;
 				flex-direction: column;
 				align-items: flex-start;
@@ -311,7 +295,10 @@
 			&:hover .is--btn{
 				box-shadow: 0 0 10px fadeout(@black, 50%);
 			}
-			.media-breakpoint-up(@md; {	
+			.media-breakpoint-up(@sm; {
+			});
+			.media-breakpoint-up(@md; {
+				height: inherit!important;
 				& > img{
 					display: block;
 					width: 50%;
@@ -327,15 +314,13 @@
 					left: 0;
 					bottom: 0;	
 					width: 50%;
-					img{
-						max-height: initial;
-					}
+					height: initial!important;
 					& > div{
 						font-size: 14px;
 						h5{
 							margin: 0 0 10px 0;
-							font-size: 22px;
-							line-height: 29px;
+							font-size: 18px;
+							line-height: 27px;
 						}
 					}
 				}
@@ -347,6 +332,21 @@
 				.is--banner{
 					width: 40%;			
 					& > div{
+						
+					}
+				}
+				& > img{
+					width: 60%;
+					margin-left: auto;
+				}
+			});
+			.media-breakpoint-up(@xxl; {
+				padding: 30px 25px;
+				.is--banner{
+					img{
+						max-height: initial;
+					}		
+					& > div{
 						font-size: 18px;
 						line-height: 120%;
 						h5{
@@ -354,10 +354,6 @@
 							line-height: 110%;
 						}
 					}
-				}
-				& > img{
-					width: 60%;
-					margin-left: auto;
 				}	
 			});
 		}

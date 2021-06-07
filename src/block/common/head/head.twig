@@ -18,3 +18,6 @@
 
 <link href="{{path.css}}/fonts.css" rel="stylesheet">
 <link href="{{path.css}}/style.css" rel="stylesheet">
+{% if style %}
+<link href="{{path.css}}/{{style}}.css" rel="stylesheet">
+{% endif %}
