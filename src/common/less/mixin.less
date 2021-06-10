@@ -182,7 +182,8 @@
 	position: absolute;
 	appearance: none;
 	width: 1px;
-	height: 1px;
+	left: 0; 
+	//height: 1px; 
 	margin: -1px;
 	clip: rect(0 0 0 0);
 }
@@ -201,5 +202,18 @@
 	img{
 		.img-fit();
 		object-position: center;
+	}
+}
+.scrollbar(@w: 4px; @r: 0px; @t: @white; @s: #00c4d9){	
+	&::-webkit-scrollbar-track{
+		background-color: @t;
+	}
+	&::-webkit-scrollbar{
+		width: @w;
+		background: @t;
+	}
+	&::-webkit-scrollbar-thumb{
+		background-color: @s;
+		border-radius: @r;
 	}
 }

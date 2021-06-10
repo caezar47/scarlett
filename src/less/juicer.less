@@ -90,7 +90,7 @@
 					border-color: #c4007a;
 				}
 			}
-			.form__file{
+			.form__file-name{
 				box-sizing: border-box;
 				border: 1px solid #a1a1a1;
 				&:focus{
@@ -273,6 +273,8 @@
 			});
 		}
 		&.is--juicer{
+			display: block;
+			text-decoration: none;
 			text-align: center;
 			font-family: @site_ff_400;
 			font-size: 15px;
@@ -424,26 +426,26 @@
 			}
 		}
 		&.is--juicer{
-			a{
-				display: inline-block;
-				color: @white;
-				text-transform: uppercase;
-				text-decoration: none;
-				font-size: 13px;
-				font-family: @site_ff_700;
-				font-weight: 700;
-				padding: 9px 35px 4px;
-				transition: @trs-site;
-				&:hover{
-					background-color: #00c4d9!important;
-				}
+			display: inline-block;
+			color: @white;
+			text-transform: uppercase;
+			text-decoration: none;
+			font-size: 13px;
+			font-family: @site_ff_700;
+			font-weight: 700;
+			padding: 9px 35px 4px;
+			transition: @trs-site;
+			.juicer__card:hover &{
+				background-color: #00c4d9!important;
 			}
 		}
 	}
 	&table{
 		&-responsive{
+    		overflow: auto;
+			max-height: 650px;
+			.scrollbar(@w: 4px; @r: 0px; @t: @white; @s: #c4007a);
 			.media-breakpoint-down(@lg; {
-				overflow: auto;
 				& > *{
 					white-space: nowrap;
 				}
@@ -451,7 +453,7 @@
 			& + * {
 				margin-top: 30px;
 				.media-breakpoint-up(@xl; {
-					margin-top: 105px;
+					//margin-top: 105px;
 				});
 			}
 		}

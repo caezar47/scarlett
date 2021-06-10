@@ -19,22 +19,21 @@
 			{% if list %}
 			<div class="{{content_prefix}}row  grid__row  {{content_mod}}">
 				{% for value in list %}
-					<div class="{{content_prefix}}card  {{content_mod}}">
+					<{% if value.tag == "a" %}a href="#" {% else %}div{% endif %} class="{{content_prefix}}card  {{content_mod}}">
 						<picture class="{{content_prefix}}img  {{content_mod}}">
 							<img src="{{value.img}}" class="img-responsive" alt="">
 						</picture>
-						<div>
+						<div> 
 							<p class="{{content_prefix}}name  {{content_mod}}">{{value.name}}</p>
 							<div class="{{content_prefix}}note  {{content_mod}}">{{value.note}}</div>
 							{% if value.label %}
 							<div class="{{content_prefix}}label  {{content_mod}}">{{value.label}}</div>
 							{% endif %}
 							{% if value.btn %}
-							<div class="{{content_prefix}}btn  {{content_mod}}"><a href="#" style="background-color: {{value.btn_color}}">{{value.btn}}</a></div>
+							<div class="{{content_prefix}}btn  {{content_mod}}" style="background-color: {{value.btn_color}}">{{value.btn}}</div>
 							{% endif %}
 						</div>
-
-					</div>
+					</{% if value.tag == "a" %}a{% else %}div{% endif %}>
 				{% endfor %}
 			</div>
 			{% endif %}
@@ -68,7 +67,7 @@
 					</table>
 				</div>
 				<div class="{{content_prefix}}btn  {{content_mod}}">
-					<button type="buttom">Все победители</button>
+					<button type="buttom" class="js--show">Все победители</button>
 				</div>
 			{% endif %}
 		{% if container != "false" %}

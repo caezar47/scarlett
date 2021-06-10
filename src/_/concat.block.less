@@ -907,29 +907,26 @@
 	}
 
 	&file{
-		display: block;
 		position: relative;
-		cursor: pointer;
-		width: 100%;
-		border: 2px solid @white;
-		background-color: @white;
-    	padding: 0 10px;
-    	font-size: 14px;
-    	line-height: 38px;
-		height: 38px;
-		color: #d6d6d6;
-		&:focus{
-			border-color: #00c4d9;
-		}
+		display: block;
+		box-sizing: border-box;
 		&-input{
-			position: absolute;
-			appearance: none;
-			width: 1px;
-			height: 1px;
-			margin: -1px;
-			clip: rect(0 0 0 0);
+			.visually-hidden();
 		}		
 		&-name{
+			box-sizing: border-box;
+			cursor: pointer;
+			width: 100%;
+			border: 2px solid @white;
+			background-color: @white;
+	    	padding: 0 10px;
+	    	font-size: 14px;
+	    	line-height: 38px;
+			height: 38px;
+			color: #d6d6d6;
+			&:focus{
+				border-color: #00c4d9;
+			}
 			p{
 				margin: 0;
 				display: flex;
@@ -1011,19 +1008,32 @@
 	display: block;
 	cursor: pointer;
 	text-align: left;
+
+	& + .form__control,
+	& ~ .form__file-name{
+		border-color: @form_error_bg!important;
+	}
 	.formErrorContent { 
 		z-index: 991;
 		position:relative;
 		width: 100%;
 		min-width: 120px;
-		background-color: @form_error_bg;
-		color: @form_error_text_color;
-		font-size: @form_error_fs;
-		line-height: @form_error_lh;
-		border: @form_error_border_width solid @form_error_border_color ;
-		padding: 5px 10px;
-		border-radius: @form_error_radius ;
-	    text-transform: uppercase;
+		font-size: 12px;
+		line-height: 14px;
+		font-family: @site_ff_400;
+		padding-top: 15px;
+		color: @form_error_bg;
+		br{
+			display: none;
+		}
+		//background-color: @form_error_bg;
+		//color: @form_error_text_color;
+		//font-size: @form_error_fs;
+		//line-height: @form_error_lh;
+		//border: @form_error_border_width solid @form_error_border_color ;
+		//padding: 5px 10px;
+		//border-radius: @form_error_radius ;
+	    //text-transform: uppercase;
 	    .greenPopup &{ 
 	    	background: @form_error_bg_pass;
 	    }
@@ -1031,7 +1041,7 @@
 	    	background: @form_error_bg_load;  
 	    }
 	}
-	.formErrorArrow { 
+	/*.formErrorArrow { 
 		z-index: 996;
 		position:relative;
 		width: 16px;
@@ -1055,7 +1065,7 @@
 			    border-bottom-color: @form_error_bg_load;
 			} 
 	    }
-	}
+	}*/
 
 	&.inline {
 		position: relative;
