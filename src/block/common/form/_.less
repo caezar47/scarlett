@@ -87,7 +87,8 @@
 		.btn-clearfix();
 		font-size: 19px;
 		line-height: 21px;
-		width: 310px;
+		max-width: 310px;
+		width: 100%;
 		color: @white;
 		font-family: @site_ff_700;
 		background-color: #3b9e00;
@@ -122,6 +123,7 @@
 		}
 	}
 	&link{
+		font-family: @site_ff_400;
 		font-size: 15px;
 		line-height: 15px;
 		border-bottom: 1px solid @black;
@@ -135,6 +137,7 @@
 		}
 	}
 	&control{
+		font-family: @site_ff_400;
 		width: 100%;
 		border: 2px solid @white;
 		background-color: @white;
@@ -189,23 +192,29 @@
 	}
 
 	&file{
+		font-family: @site_ff_400;
 		position: relative;
 		display: block;
 		box-sizing: border-box;
 		&-input{
 			.visually-hidden();
+			bottom: 15px;
 		}		
 		&-name{
 			box-sizing: border-box;
 			cursor: pointer;
 			width: 100%;
-			border: 2px solid @white;
+			border: 2px dashed @white;
 			background-color: @white;
 	    	padding: 0 10px;
 	    	font-size: 14px;
 	    	line-height: 38px;
-			height: 38px;
+			height: 90px;
 			color: #d6d6d6;
+			text-align: center;
+			.icon-clip();
+			background-position: center 10px;
+			padding-top: 50px;
 			&:focus{
 				border-color: #00c4d9;
 			}
@@ -230,6 +239,7 @@
 	}
 
 	&checkbox{
+		font-family: @site_ff_400;
 		&{
 			position: relative;
 			display: flex;
@@ -267,6 +277,8 @@
 				height: 100%;
 				background-position: center;
 				transition: @trs-site;
+			    background-repeat: no-repeat;
+			    background-position: 50%;
 			}
 			.form__checkbox-input:focus + &{
 				//border-color: @check_focus_border_color;
@@ -274,7 +286,8 @@
 			.form__checkbox-input:checked + &{
 				//border-color: @check_focus_border_color;
 				&::after{
-				    background: #00c4d9 url(/local/templates/rs.scarlett/assets/css/../img/checked.png) 50% no-repeat;
+				    background-color: #00c4d9;
+				    background-image: url(//www.scarlett.ru//local/templates/rs.scarlett/assets/css/../img/checked.png);
 				}
 			}
 		}

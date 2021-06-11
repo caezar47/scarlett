@@ -2170,7 +2170,7 @@
                     "regex": "none",
                     "alertText": "Необходимо заполнить. ",
                     "alertTextCheckboxMultiple": "* Вы должны выбрать вариант",
-                    "alertTextCheckboxe": "* Необходимо отметить"
+                    "alertTextCheckboxe": "Необходимо отметить. "
                 },
                 "requiredInFunction": { 
                     "func": function(field, rules, i, options){

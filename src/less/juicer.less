@@ -91,8 +91,8 @@
 				}
 			}
 			.form__file-name{
-				box-sizing: border-box;
-				border: 1px solid #a1a1a1;
+				border-width: 1px;
+				border-color: #a1a1a1;
 				&:focus{
 					border-color: #c4007a;
 				}
@@ -112,7 +112,7 @@
 
 			.form__checkbox-input:checked + *{
 				&::after{
-				    background: #c4007a url(/local/templates/rs.scarlett/assets/css/../img/checked.png) 50% no-repeat;
+				    background-color: #c4007a;
 				}
 			}
 		}
@@ -169,7 +169,7 @@
 					flex: 1 1 100%;
 					max-width: 100%;
 					.form__file{
-						max-width: 305px;
+						max-width: 310px;
 						margin: 0 auto;
 					}
 				}
@@ -177,10 +177,9 @@
 					flex: 1 1 100%;
 					max-width: 100%;
 					margin-top: 5px;
-					margin-bottom: 18px;
 					.form__item{
 						margin: 0 auto;
-						max-width: 305px;
+						max-width: 310px;
 					}
 				}
 				& > [data-grid-submit]{
@@ -232,8 +231,10 @@
 		}
 		&.is--prizes-winner{
 			font-size: 21px;
-			line-height: 19px;
+			line-height: 19px;			
+			color: #201600;
 			background-color: #f6f6f6;
+			text-decoration: none;
 			position: relative;
 			z-index: 1;
 			display: flex;
@@ -443,9 +444,10 @@
 	&table{
 		&-responsive{
     		overflow: auto;
-			max-height: 650px;
+			max-height: 770px;
 			.scrollbar(@w: 4px; @r: 0px; @t: @white; @s: #c4007a);
 			.media-breakpoint-down(@lg; {
+				max-height: 390px;
 				& > *{
 					white-space: nowrap;
 				}
@@ -476,8 +478,7 @@
 				}
 			}
 			td{
-				padding: 7px 5px;
-
+				padding: 10px 5px;
 			}
 		}
 	}
