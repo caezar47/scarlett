@@ -57,7 +57,7 @@
 									{% for tbody in t.tbody %}
 										<tr>
 											{% for td in tbody.list %}
-											<td>{{td.td}}</td>
+											<td {% if td.label %}data-label="{{td.label}}"{% endif %}>{{td.td}}</td>
 											{% endfor %}
 										</tr>
 									{% endfor %}
