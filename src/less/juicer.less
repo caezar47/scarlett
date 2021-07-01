@@ -132,9 +132,9 @@
     		margin: 0 auto;
 			grid-template-columns: 100%;
 			.media-breakpoint-up(@md; {
-				grid-template-columns: repeat(2, 1fr);
+				//grid-template-columns: repeat(2, 1fr);
 			});
-			.media-breakpoint-up(@lg; {
+			.media-breakpoint-up(@md; {
 				grid-template-columns: repeat(3, 1fr);
 			});
 		}
@@ -222,12 +222,15 @@
 			text-align: center;
 		}
 		&.is--prizes{
-			font-size: 25px;
+			font-size: 22px;
 			line-height: 23px;
 			color: #201600;
 			font-weight: 300;
 			font-family: @site_ff_300;
 			text-align: center;
+			.media-breakpoint-up(@xl; {
+				font-size: 25px;
+			});
 		}
 		&.is--prizes-winner{
 			font-size: 21px;
@@ -335,9 +338,12 @@
 			margin: 0px auto 15px;
 			padding: 8px 10px 3px;
 			display: inline-block;
-			font-size: 21px;
+			font-size: 17px;
 			line-height: 21px;
 			color: #ffffff;
+			.media-breakpoint-up(@xl; {
+				font-size: 21px;
+			});
 		}
 		&.is--prizes-winner{
 			font-family: @site_ff_700;
