@@ -10,6 +10,15 @@
 
 .juicer__{
 	&section{
+		&.is--nav{
+			background-color: fadeout(@white, 10%);
+			border-bottom: 1px solid #f0f0f0;
+    		position: fixed;
+    		top: 60px;
+    		left: 0;
+    		right: 0px;
+    		z-index: 29;
+		}
 		&.is--header{}
 		&.is--step{
 			background-color: #a8c823;
@@ -41,6 +50,9 @@
 	}
 	&container{
 		box-sizing: border-box;
+		&.is--nav{
+			max-width: 1210px;
+		}
 		&.is--step{
 			padding-top: 30px;
 			padding-bottom: 40px;
@@ -73,6 +85,36 @@
 			.media-breakpoint-up(@xl; {
 				padding-bottom: 70px;
 			});
+		}
+	}
+	&nav{
+		list-style: none;
+		display: flex;
+		gap: 20px;
+		margin: 0;
+		padding: 0;
+		li{
+			a{
+				text-decoration: none;
+				color: #595959;
+				font-family: @site_ff_700;
+				transition: @trs-site;
+				display: block;
+				padding: 25px 0;
+				font-size: 9px;
+				line-height: 120%;
+				text-transform: uppercase;
+				&.is--active,
+				&:hover{
+					color: @primary-p;
+				}
+				.media-breakpoint-up(@sm; {
+					padding: 20px 0;
+					text-transform: none;
+					font-size: 16px;
+					line-height: 125%;
+				});
+			}
 		}
 	}
 	&form{

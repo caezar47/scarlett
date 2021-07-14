@@ -7,6 +7,43 @@
         }  %}
     </head>
     <body>
+        <img src="{{path.img}}/temp/menu.jpg" style="position: fixed;top: 0;left: 0;right: 0;z-index: 30;height: 60px;" alt="">
+        {% include "../block/page/block.twig" with {
+            view:               "promo_nav",
+
+            content_prefix:     prefix.juicer, 
+            content_mod:        "is--nav",  
+            
+            nav:[
+                {
+                    name:"Призы",
+                    link:"#juicer-prizes",
+                    mod:"scrollto",
+                    diff:"-120",
+                },
+                {
+                    name:"Зарегистрировать чек",
+                    link:"#juicer-form",
+                    mod:"scrollto",
+                    diff:"-123",
+                },
+                {
+                    name:"Победители",
+                    link:"#juicer-winner",
+                    mod:"scrollto",
+                    diff:"-123",
+                },
+                {
+                    name:"Купить",
+                    link:"#juicer-buy",
+                    mod:"scrollto",
+                    diff:"-123",
+                },
+            ],
+        } %}
+
+
+
         {% include "../block/page/block.twig" with {
             view:               "promo_header",
 
@@ -45,6 +82,8 @@
         {% include "../block/page/block.twig" with {
             view:               "promo_step",
 
+            ID:                 "juicer-prizes",
+
             content_prefix:     prefix.juicer, 
             content_mod:        "is--prizes",  
             heading:            "Призы",  
@@ -69,6 +108,8 @@
         } %}
 
         {% include "../block/page/block.twig" with {
+            ID:                 'juicer-form',
+
             view:               "promo_form",
             content_prefix:     prefix.juicer, 
             content_mod:        "is--form",
@@ -104,6 +145,9 @@
                     ],
                 } %}
                 {% include "../block/page/block.twig" with {
+
+                    ID:                 'juicer-winner',
+
                     view:               "promo_step",
                     container:          "false",
 
@@ -325,6 +369,7 @@
 
 
         {% include "../block/page/block.twig" with {
+            ID:                 "juicer-buy",
             view:               "promo_step",
 
             content_prefix:     prefix.juicer, 

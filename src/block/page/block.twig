@@ -1,3 +1,17 @@
+{% if view == "promo_nav" %}
+	<section class="{{content_prefix}}section  {{content_mod}}">
+		<div class="{{content_prefix}}container  container  {{content_mod}}">
+			<ul class="{{content_prefix}}nav  {{content_mod}}">
+				{% for n in nav %}
+					<li>
+						<a href="{{n.link}}" class="{{n.mod}}" {% if n.diff %}data-scrollto-diff="{{n.diff}}"{% endif %}>{{n.name}}</a>
+					</li>
+					
+				{% endfor %}
+			</ul>
+		</div>
+	</section>
+{% endif %}
 {% if view == "promo_header" %}
 	<section class="{{content_prefix}}section  {{content_mod}}">
 		<picture class="{{content_prefix}}img  {{content_mod}}">
@@ -9,7 +23,7 @@
 	</section>
 {% endif %}
 {% if view == "promo_step" %}
-	<section class="{{content_prefix}}section  {{content_mod}}">
+	<section class="{{content_prefix}}section  {{content_mod}}" {% if ID %}id="{{ID}}"{% endif %}>
 		{% if container != "false" %}
 		<div class="{{content_prefix}}container  container  {{content_mod}}">
 		{% endif %}
@@ -76,7 +90,7 @@
 	</section>
 {% endif %}
 {% if view == "promo_form" %}
-	<section class="{{content_prefix}}section  {{content_mod}}">
+	<section class="{{content_prefix}}section  {{content_mod}}" {% if ID %}id="{{ID}}"{% endif %}>
 		<div class="{{content_prefix}}container  container  {{content_mod}}">
 			<h2 class="{{content_prefix}}heading  {{content_mod}}">{{heading}}</h2>
 			
