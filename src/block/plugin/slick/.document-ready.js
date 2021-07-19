@@ -176,3 +176,18 @@ $(function() {
 		autoplaySpeed: 7000,
 	});
 }); 
+
+	
+
+
+$(window).on('scroll',function(event){
+	var ST = 	$(document).scrollTop();		
+	var navbar = 	$('.juicer__section.is--nav');	
+	var start = 	$('.juicer__section.is--step').offset().top;
+	//console.log(start);
+	if(ST <= start) {
+		navbar.removeClass('is--visible');
+	} else{
+		navbar.addClass('is--visible');
+	}
+}).trigger('scroll');
