@@ -9,6 +9,9 @@
 <script src="{{path.js}}/modals.js" ></script>
 {% else %}
 {% endif %}
+{% if script %}
+<script src="{{path.js}}/{{script}}.js" ></script>
+{% endif %}
 <script src="{{path.js}}/svg4everybody.min.js" ></script>
 <script>
 svg4everybody();

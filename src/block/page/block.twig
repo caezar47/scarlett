@@ -149,6 +149,21 @@
 		</div>
 	</section>
 {% endif %}
+{% if view == "promo_faq" %}
+	<section class="{{content_prefix}}section  {{content_mod}}" {% if ID %}id="{{ID}}"{% endif %}>
+		<div class="{{content_prefix}}container  container  {{content_mod}}">		
+			{% if heading %}
+				<h2 class="{{content_prefix}}heading  {{content_mod}}">{{heading}}</h2>
+			{% endif %}	
+			{% include "../common/card/card.twig" with {
+				view:	card_view,
+				prefix:	card_prefix,
+				mod:	card_mod,
+				list:	card_list,                    
+			} %}	
+		</div>
+	</section>
+{% endif %}
 
 
 
