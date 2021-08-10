@@ -1,0 +1,167 @@
+{% if view == "header" %}
+	<section class="{{content_prefix}}section  {{content_mod}}">
+		<picture class="{{content_prefix}}img  {{content_mod}}">
+			{% if img_xs %}
+			<source media="(max-width: 500px)" srcset="{{img_xs}}">
+			{% endif %}
+			<img src="{{img}}" class="img-responsive" alt="">
+		</picture>
+			
+		<div class="{{content_prefix}}group  {{content_mod}}">
+			<h1 class="{{content_prefix}}heading  {{content_mod}}">{{heading}}</h1>
+			<a href="#" class="{{content_prefix}}btn  {{content_mod}}  is--white">{{btn}}</a>
+		</div>
+	</section>
+{% endif %}
+{% if view == "holding" %}
+	<section class="{{content_prefix}}section  {{content_mod}}">
+		<div class="{{content_prefix}}container container  {{content_mod}}">
+			<picture class="{{content_prefix}}img  {{content_mod}}">
+				<img src="{{img}}" class="img-responsive" alt="">
+			</picture>
+			<div class="{{content_prefix}}note  {{content_mod}}">{{note}}</div>
+			<div class="{{content_prefix}}row  {{content_mod}}">
+				{% for i in img_list %}
+					<div class="{{content_prefix}}card  {{content_mod}}">
+						<a href="{{i.link}}"><img src="{{i.img}}" alt=""></a>
+					</div>
+				{% endfor %}
+			</div>
+		</div>
+	</section>
+{% endif %}
+{% if view == "year" %}
+	<section class="{{content_prefix}}section  {{content_mod}}">
+		<div class="{{content_prefix}}container container  {{content_mod}}">
+			
+			<div class="{{content_prefix}}note  {{content_mod}}">{{note}}</div>
+			
+		</div>
+	</section>
+{% endif %}
+{% if view == "team" %}
+	<section class="{{content_prefix}}section  {{content_mod}}">
+		<div class="{{content_prefix}}container container  {{content_mod}}">
+			<div class="{{content_prefix}}row  {{content_mod}}">
+				
+				<div class="{{content_prefix}}note  {{content_mod}}">
+					{{note}}
+					<div class="{{content_prefix}}note  {{content_mod}}  is--hidden-xs">
+						{{note_xs}}
+						<a href="#" class="{{content_prefix}}btn  {{content_mod}}  is--white">{{btn}}</a>
+					</div>
+				</div>
+				<div>
+					<div data-slick-team>
+						{% for img in img_list %}
+						<div class="{{content_prefix}}img  {{content_mod}}">
+							<img src="{{img.img}}" alt="">
+						</div>
+						{% endfor %}
+					</div>
+				</div>
+				<div class="{{content_prefix}}note  {{content_mod}}  is--visible-xs">
+					{{note_xs}}
+					<a href="#" class="{{content_prefix}}btn  {{content_mod}}  is--white">{{btn}}</a>
+				</div>
+				
+			</div>
+		</div>
+	</section>
+{% endif %}
+{% if view == "history" %}
+	<section class="{{content_prefix}}section  {{content_mod}}">
+		<div class="{{content_prefix}}container container  {{content_mod}}">
+			
+			<div data-slick-history class="{{content_prefix}}row  {{content_mod}}">
+				{% for value in list %}
+				<div class="{{content_prefix}}card  {{content_mod}}">
+					<div class="{{content_prefix}}img  {{content_mod}}">
+						<img src="{{value.img}}" alt="">
+					</div>
+					<p class="{{content_prefix}}heading  {{content_mod}}">{{value.year}}
+					</p>
+					<p class="{{content_prefix}}note  {{content_mod}}">{{value.note}}
+					</p>
+				</div>
+				{% endfor %}
+			</div>
+		</div>
+	</section>
+{% endif %}
+{% if view == "numbers" %}
+	<section class="{{content_prefix}}section  {{content_mod}}">
+		<img src="{{bg}}" alt="" class="{{content_prefix}}bg  {{content_mod}}">
+		<div class="{{content_prefix}}container container  {{content_mod}}">
+			<h2 class="{{content_prefix}}heading  {{content_mod}}">{{heading}}</h2>
+			<div class="{{content_prefix}}row  {{content_mod}}">
+				{% for value in list %}
+				<div class="{{content_prefix}}card  {{content_mod}}">
+					<p class="{{content_prefix}}name  {{content_mod}}">{{value.name}}
+					</p>
+					<p class="{{content_prefix}}note  {{content_mod}}">{{value.note}}
+					</p>
+				</div>
+				{% endfor %}
+			</div>
+		</div>
+	</section>
+{% endif %}
+{% if view == "geo" %}
+	<section class="{{content_prefix}}section  {{content_mod}}">
+
+		<div class="{{content_prefix}}container container  {{content_mod}}">
+			<h2 class="{{content_prefix}}heading  {{content_mod}}">{{heading}}</h2>
+			<div class="{{content_prefix}}img  {{content_mod}}">
+				<img src="{{img}}" alt="" >
+			</div>
+		</div>
+	</section>
+{% endif %}
+{% if view == "adv" %}
+	<section class="{{content_prefix}}section  {{content_mod}}">
+		<div class="{{content_prefix}}row  {{content_mod}}">
+			{% for value in list %}
+			<div class="{{content_prefix}}card  {{content_mod}}">
+				<div class="{{content_prefix}}img  {{content_mod}}"><img src="{{value.img}}" alt=""></div>
+				<p class="{{content_prefix}}name  {{content_mod}}">{{value.name}}</p>
+			</div>
+			{% endfor %}
+		</div>
+	</section>
+{% endif %}
+{% if view == "vacancies" %}
+	<section class="{{content_prefix}}section  {{content_mod}}">
+		<div class="{{content_prefix}}container container  {{content_mod}}">
+			<h2 class="{{content_prefix}}heading  {{content_mod}}">{{heading}}</h2>
+			<div id="{{list_id}}" class="{{content_prefix}}group  panel-group  {{content_mod}}">
+			{% for value in list %}
+				<div class="{{content_prefix}}card  panel  {{content_mod}} {% if value.active %}is--active{% endif %}"  id="h-{{list_id}}-{{value.id}}">
+					<a class="{{content_prefix}}name  {{content_mod}}  is--collapse" data-toggle="collapse" data-parent="#{{list_id}}" href="#{{list_id}}-{{value.id}}" {% if value.active %}aria-expanded="true"{% endif %}>
+						<p class="{{content_prefix}}name  {{content_mod}}  is--name">
+							{{value.name}}
+						</p>
+						<p class="{{content_prefix}}name  {{content_mod}}  is--cost">
+							{{value.cost}}
+						</p>
+						<p class="{{content_prefix}}name  {{content_mod}}  is--addr">
+							{{value.addr}}
+						</p>
+					</a>
+					<div id="{{list_id}}-{{value.id}}" class="collapse  {% if value.active %}in{% endif %}" aria-labelledby="h-{{list_id}}-{{value.id}}">
+						<div class="{{prefix}}note  {{mod}}">
+							{{value.note}}
+							<h6>Чему Вы научитесь:</h6>
+							<ul>
+							{% for l in value.list %} 
+								<li><a href="#">{{l.name}}</a></li>
+							{% endfor %}
+							</ul>
+						</div>
+					</div>
+				</div>
+			{% endfor %}			
+			</div>
+		</div>
+	</section>
+{% endif %}
