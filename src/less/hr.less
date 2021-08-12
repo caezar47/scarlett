@@ -175,9 +175,12 @@ html {
 				gap: 10px;
 				margin: 20px 0 0;
 				padding: 0;
-				list-style: none!important;
+				list-style: none;
 				justify-content: center;
 				li{
+					width: 10px;
+					height: 10px;
+					margin: 0;
 					button{
 						display: block;
 						font-size: 0;
@@ -189,6 +192,10 @@ html {
 						transition: @trs-site;
 						width: 10px;
 						height: 10px;
+						margin: 0!important;
+						&::before{
+							display: none!important;
+						}
 					}
 					&.slick-active{
 						button{
