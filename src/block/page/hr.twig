@@ -9,7 +9,7 @@
 			
 		<div class="{{content_prefix}}group  {{content_mod}}">
 			<h1 class="{{content_prefix}}heading  {{content_mod}}">{{heading}}</h1>
-			<a href="#" class="{{content_prefix}}btn  {{content_mod}}  is--white">{{btn}}</a>
+			<a href="#hr-form" data-scrollto-diff="-60"  class="{{content_prefix}}btn  {{content_mod}}  is--white  scrollto">{{btn}}</a>
 		</div>
 	</section>
 {% endif %}
@@ -48,7 +48,7 @@
 					{{note}}
 					<div class="{{content_prefix}}note  {{content_mod}}  is--hidden-xs">
 						{{note_xs}}
-						<a href="#" class="{{content_prefix}}btn  {{content_mod}}  is--white">{{btn}}</a>
+						<a class="{{content_prefix}}btn  {{content_mod}}  is--white  scrollto" href="#hr-form" data-scrollto-diff="-60">{{btn}}</a>
 					</div>
 				</div>
 				<div>
@@ -62,7 +62,7 @@
 				</div>
 				<div class="{{content_prefix}}note  {{content_mod}}  is--visible-xs">
 					{{note_xs}}
-					<a href="#" class="{{content_prefix}}btn  {{content_mod}}  is--white">{{btn}}</a>
+					<a class="{{content_prefix}}btn  {{content_mod}}  is--white  scrollto" href="#hr-form" data-scrollto-diff="-60">{{btn}}</a>
 				</div>
 				
 			</div>
@@ -161,7 +161,7 @@
 	</section>
 {% endif %}
 {% if view == "form" %}
-	<section class="{{content_prefix}}section  {{content_mod}}">
+	<section class="{{content_prefix}}section  {{content_mod}}" id="hr-form">
 		<div class="{{content_prefix}}container container  {{content_mod}}">
 			<h2 class="{{content_prefix}}heading  {{content_mod}}">{{heading}}</h2>
 			<form action="#" class="{{content_prefix}}form  {{content_mod}}"  data-form-validation>
