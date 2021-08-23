@@ -1,5 +1,5 @@
 {% if view == "header" %}
-	<section class="{{content_prefix}}section  {{content_mod}}">
+	<section class="{{content_prefix}}section  {{content_mod}}" {% if ID %}id="{{ID}}"{% endif %}>
 		<picture class="{{content_prefix}}img  {{content_mod}}">
 			{% if img_xs %}
 			<source media="(max-width: 500px)" srcset="{{img_xs}}">
@@ -14,7 +14,7 @@
 	</section>
 {% endif %}
 {% if view == "holding" %}
-	<section class="{{content_prefix}}section  {{content_mod}}">
+	<section class="{{content_prefix}}section  {{content_mod}}" {% if ID %}id="{{ID}}"{% endif %}>
 		<div class="{{content_prefix}}container container  {{content_mod}}">
 			<picture class="{{content_prefix}}img  {{content_mod}}">
 				<img src="{{img}}" class="img-responsive" alt="">
@@ -31,7 +31,7 @@
 	</section>
 {% endif %}
 {% if view == "year" %}
-	<section class="{{content_prefix}}section  {{content_mod}}">
+	<section class="{{content_prefix}}section  {{content_mod}}" {% if ID %}id="{{ID}}"{% endif %}>
 		<div class="{{content_prefix}}container container  {{content_mod}}">
 			
 			<div class="{{content_prefix}}note  {{content_mod}}">{{note}}</div>
@@ -40,7 +40,7 @@
 	</section>
 {% endif %}
 {% if view == "team" %}
-	<section class="{{content_prefix}}section  {{content_mod}}">
+	<section class="{{content_prefix}}section  {{content_mod}}" {% if ID %}id="{{ID}}"{% endif %}>
 		<div class="{{content_prefix}}container container  {{content_mod}}">
 			<div class="{{content_prefix}}row  {{content_mod}}">
 				
@@ -70,7 +70,7 @@
 	</section>
 {% endif %}
 {% if view == "history" %}
-	<section class="{{content_prefix}}section  {{content_mod}}">
+	<section class="{{content_prefix}}section  {{content_mod}}" {% if ID %}id="{{ID}}"{% endif %}>
 		<div class="{{content_prefix}}container container  {{content_mod}}">
 			
 			<div data-slick-history class="{{content_prefix}}row  {{content_mod}}">
@@ -90,7 +90,7 @@
 	</section>
 {% endif %}
 {% if view == "numbers" %}
-	<section class="{{content_prefix}}section  {{content_mod}}">
+	<section class="{{content_prefix}}section  {{content_mod}}" {% if ID %}id="{{ID}}"{% endif %}>
 		<img src="{{bg}}" alt="" class="{{content_prefix}}bg  {{content_mod}}">
 		<div class="{{content_prefix}}container container  {{content_mod}}">
 			<h2 class="{{content_prefix}}heading  {{content_mod}}">{{heading}}</h2>
@@ -108,7 +108,7 @@
 	</section>
 {% endif %}
 {% if view == "geo" %}
-	<section class="{{content_prefix}}section  {{content_mod}}">
+	<section class="{{content_prefix}}section  {{content_mod}}" {% if ID %}id="{{ID}}"{% endif %}>
 
 		<div class="{{content_prefix}}container container  {{content_mod}}">
 			<h2 class="{{content_prefix}}heading  {{content_mod}}">{{heading}}</h2>
@@ -119,7 +119,7 @@
 	</section>
 {% endif %}
 {% if view == "adv" %}
-	<section class="{{content_prefix}}section  {{content_mod}}">
+	<section class="{{content_prefix}}section  {{content_mod}}" {% if ID %}id="{{ID}}"{% endif %}>
 		<div class="{{content_prefix}}row  {{content_mod}}">
 			{% for value in list %}
 			<div class="{{content_prefix}}card  {{content_mod}}">
@@ -131,7 +131,7 @@
 	</section>
 {% endif %}
 {% if view == "vacancies" %}
-	<section class="{{content_prefix}}section  {{content_mod}}">
+	<section class="{{content_prefix}}section  {{content_mod}}" {% if ID %}id="{{ID}}"{% endif %}>
 		<div class="{{content_prefix}}container container  {{content_mod}}">
 			<h2 class="{{content_prefix}}heading  {{content_mod}}">{{heading}}</h2>
 			<div id="{{list_id}}" class="{{content_prefix}}group  panel-group  {{content_mod}}">
@@ -161,7 +161,7 @@
 	</section>
 {% endif %}
 {% if view == "form" %}
-	<section class="{{content_prefix}}section  {{content_mod}}" id="hr-form">
+	<section class="{{content_prefix}}section  {{content_mod}}" {% if ID %}id="{{ID}}"{% endif %}>
 		<div class="{{content_prefix}}container container  {{content_mod}}">
 			<h2 class="{{content_prefix}}heading  {{content_mod}}">{{heading}}</h2>
 			<form action="#" class="{{content_prefix}}form  {{content_mod}}"  data-form-validation>
