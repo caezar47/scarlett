@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="ru-RU"> 
+    <head>
+        {% include "../block/common/head/head.twig" with {
+            title:"Чем мы можем вам помочь?",
+        }  %}
+    </head>
+    <body>
+        {% include "../block/page/faq.twig" with {
+            view:               "index",
+
+            content_prefix:     prefix.faq, 
+            content_mod:        "is--index",  
+            heading:            "Чем мы можем вам&nbsp;помочь?",
+            bg:                [path.img,"/faq/bg-index.png"].join(''),
+
+            card:           [
+                {
+                    link:   page.faq_form,
+                    img:    [path.img,"/faq/category-item1.svg"].join(''),
+                    name:   'Стать партнёром Scarlett',
+                },
+                {
+                    link:   page.faq_cat,
+                    img:    [path.img,"/faq/category-item2.svg"].join(''),
+                    name:   'Купить продукцию Scarlett',
+                },
+                {
+                    link:   page.faq_cat,
+                    img:    [path.img,"/faq/category-item3.svg"].join(''),
+                    name:   'Консультация по продукту',
+                },
+                {
+                    link:   page.faq_cat,
+                    img:    [path.img,"/faq/category-item4.svg"].join(''),
+                    name:   'Сервисное обслуживание',
+                },
+            ],
+        } %}
+        {% include "../block/common/script/script.twig" with {
+            script :"document-ready"
+        }%}
+    </body>
+</html> 

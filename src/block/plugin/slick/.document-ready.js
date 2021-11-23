@@ -6,6 +6,7 @@ $(function() {
 	var slider = $('[data-slick-slider]');
 	var insta = $('[data-slick-insta]');
 	var catalog = $('[data-slick-catalog]');
+	var faq = $('[data-slick-faq]');
 	var catalog_note = $('[data-slick-catalog-note]');
 	var prevArrow = '<button type="button" class="slick-btn  is--prev"><span class="sr-only">Предыдущий слайд</span></button>';
 	var nextArrow = '<button type="button" class="slick-btn  is--next"><span class="sr-only">Следующий слайд</span></button>';
@@ -140,6 +141,39 @@ $(function() {
 		    }
 		]
 	});
+	faq.slick({
+		slidesToShow: 4,
+		slidesToScroll: 4,
+		arrows: false,
+		dots: true,
+		infinite: true,
+		autoplay: true,
+  		autoplaySpeed: 4000,
+		responsive: [		  
+		    {
+				breakpoint: 1200,
+				settings: {
+					slidesToShow: 3,
+					slidesToScroll: 2, 
+				}
+		    },
+		  
+		    {
+				breakpoint: 766,
+				settings: {
+					slidesToShow: 2,
+					slidesToScroll: 2, 
+				}
+		    },
+		    {
+				breakpoint: 576,
+				settings: {
+					slidesToShow: 1,
+					slidesToScroll: 1, 
+				}
+		    }
+		]
+	});
 	catalog.slick({
 		slidesToShow: 4,
 		slidesToScroll: 1,
@@ -179,15 +213,17 @@ $(function() {
 
 	
 
+if ( $('.juicer__section.is--step').length ) {
 
-$(window).on('scroll',function(event){
-	var ST = 	$(document).scrollTop();		
-	var navbar = 	$('.juicer__section.is--nav');	
-	var start = 	$('.juicer__section.is--step').offset().top;
-	//console.log(start);
-	if(ST <= start) {
-		navbar.removeClass('is--visible');
-	} else{
-		navbar.addClass('is--visible');
-	}
-}).trigger('scroll');
+	$(window).on('scroll',function(event){
+		var ST = 	$(document).scrollTop();		
+		var navbar = 	$('.juicer__section.is--nav');	
+		var start = 	$('.juicer__section.is--step').offset().top;
+		//console.log(start);
+		if(ST <= start) {
+			navbar.removeClass('is--visible');
+		} else{
+			navbar.addClass('is--visible');
+		}
+	}).trigger('scroll');
+}

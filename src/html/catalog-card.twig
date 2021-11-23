@@ -31,6 +31,8 @@
                 },
             ],
         } %}    
-        {% include "../block/common/script/script.twig"%}
+        {% include "../block/common/script/script.twig" with {
+            script :"document-ready"
+        }%} 
     </body>
 </html>

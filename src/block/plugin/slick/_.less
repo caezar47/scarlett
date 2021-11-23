@@ -48,6 +48,9 @@
 		[data-slick-slider] &{
 			//overflow: visible;
 		}
+		[data-slick-faq] &{
+			padding-bottom: 25px;
+		}
 	} 
 	&-track,
 	&-list {
@@ -235,6 +238,38 @@
 		}
 	}
 	&-dots{
+		[data-slick-faq] &{
+			list-style: none;
+			margin: 0px 0 0 0;
+			padding: 0;
+			display: flex;
+			justify-content: center;
+			flex-wrap: wrap;
+			li{
+				margin: 5px;
+			 	button{
+			 		padding: 0;
+			 		border: 0;
+			 		display: block;
+			 		border: 2px solid @primary-p;
+					background-color: fadeout(@white, 100%);
+			 		width: 13px;
+			 		height: 13px;
+			 		font-size: 0;
+			 		line-height: 0;
+			 		transition: @trs-site;
+			 		cursor: pointer;		 		
+					&::before{
+						display: none;
+					}
+			 	}
+				&.slick-active{
+					button{
+						background-color: @primary-p;
+					}
+				}
+			}
+		}
 		[data-slick-banner-white] &,
 		[data-slick-banner-blue] &{
 			width: auto;

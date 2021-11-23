@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="ru-RU"> 
+    <head>
+        {% include "../block/common/head/head.twig" with {
+            title:"Стать партнёром Scarlett",
+        }  %}
+    </head>
+    <body>
+        {% include "../block/page/faq.twig" with {
+            view:               "card",
+
+            content_prefix:     prefix.faq, 
+            content_mod:        "is--card",  
+
+            back:               page.faq_cat,
+            bread:           [
+                {
+                    link:   page.faq,
+                    name:   'Чем мы можем вам помочь?',
+                },
+                {
+                    name:   'Стать партнёром Scarlett',
+                },
+            ],
+            heading:       'Стать партнёром Scarlett', 
+
+            form_mod:           'is--form', 
+            form: [
+                {
+                    elem: [
+                        {
+                            'view':         'text',
+                            "type":         "text",
+                            "validate":     "validate[required, custom[onlyLetterSp]]",
+                            "placeholder":  "Фамилия, имя и отчество",
+                        },
+                        {
+                            'view':         'text',
+                            "type":         "email", 
+                            "validate":     "validate[required, custom[email]]",
+                            "placeholder":  "Email",
+                        },
+                        {
+                            'view':         'text',
+                            "type":         "tel", 
+                            "validate":     "validate[required, custom[phone]]",
+                            "placeholder":  "Телефон",
+                        },
+                    ],
+                },
+                {
+                    elem: [
+                        {
+                            'view':         'textarea',
+                            "placeholder":  "Комментарий",
+                        },
+                    ],
+                },
+                {
+                    elem: [
+                        {
+                            view:           'agreement',
+                            mod:            'is--submit',
+
+                            validate:       "validate[required]",
+                            placeholder:    'Нажимая кнопку «Отправить», вы соглашаетесь с <a href="#">политикой обработки персональных данных</a>',
+                        },
+                        {
+                            view:           'submit',
+                            mod:            'is--submit',
+                            placeholder:    "Отправить",
+                        },
+                    ],
+                }
+            ],
+        } %}
+        {% include "../block/common/script/script.twig" with {
+            script :"document-ready"
+        }%}
+    </body>
+</html>

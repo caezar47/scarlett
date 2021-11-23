@@ -1,0 +1,139 @@
+{% if view == "index" %}
+	<section class="{{content_prefix}}section  {{content_mod}}" {% if ID %}id="{{ID}}"{% endif %}  {% if bg %}style="background-image: url({{bg}})"{% endif %}>
+		<div class="{{content_prefix}}container container  {{content_mod}}">			
+			<h1 class="{{content_prefix}}heading  {{content_mod}}">{{heading}}</h1>
+			<form action="#" class="{{content_prefix}}search  {{content_mod}}">
+				<input type="text" class="{{content_prefix}}search-input" placeholder="Найти ответ">
+				<button type="submit" class="{{content_prefix}}search-btn  is--submit">
+					{% include "../common/svg-sprite/svg.twig" with {icon:'search-submit'} %}
+				</button>
+				<button type="reset" class="{{content_prefix}}search-btn  is--reset">
+					{% include "../common/svg-sprite/svg.twig" with {icon:'search-reset'} %}
+				</button>
+			</form>
+			<div class="{{content_prefix}}row  {{content_mod}}">
+				{% for card in card %}
+					<a href="{{card.link}}" class="{{content_prefix}}card  {{content_mod}}">
+						<img src="{{card.img}}" alt="{{card.name}}">
+						<p>{{card.name}}</p>
+					</a>
+				{% endfor %}
+			</div>
+		</div>
+	</section>
+{% endif %}
+{% if view == "category" %}
+	<section class="{{content_prefix}}section  {{content_mod}}" {% if ID %}id="{{ID}}"{% endif %}  {% if bg %}style="background-image: url({{bg}})"{% endif %}>
+		<div class="{{content_prefix}}container container  {{content_mod}}">
+			<ul class="{{content_prefix}}bread  {{content_mod}}">
+				{% for bread in bread %}
+					{% if bread.link %}
+					<li>
+						<a href="{{bread.link}}">{{bread.name}}</a>
+					</li>
+					<li>></li>
+					{% else %}
+						<li>{{bread.name}}</li>
+					{% endif %}
+				</li>
+				{% endfor %}
+			</ul>			
+			<h1 class="{{content_prefix}}heading  {{content_mod}}">{{heading}}</h1>
+			<div class="{{content_prefix}}row  {{content_mod}}">
+				{% for card in card %}
+					<a href="{{card.link}}" class="{{content_prefix}}card  {{content_mod}}">{{card.name}}</a>
+				{% endfor %}
+			</div>
+			<div class="{{content_prefix}}group  {{content_mod}}">
+				<p>Не нашли ответа на свой вопрос? Напишите нам</p>
+				<div>
+					<a href="#" class="{{content_prefix}}btn  {{content_mod}}">Связаться с поддержкой</a>
+				</div>
+			</div>
+		</div>
+	</section>
+{% endif %}
+{% if view == "card" %}
+	<section class="{{content_prefix}}section  {{content_mod}}" {% if ID %}id="{{ID}}"{% endif %}  {% if bg %}style="background-image: url({{bg}})"{% endif %}>
+		<div class="{{content_prefix}}container container  {{content_mod}}">
+			<ul class="{{content_prefix}}bread  {{content_mod}}">
+				{% for bread in bread %}
+					{% if bread.link %}
+					<li>
+						<a href="{{bread.link}}">{{bread.name}}</a>
+					</li>
+					<li>></li>
+					{% else %}
+						<li>{{bread.name}}</li>
+					{% endif %}
+				</li>
+				{% endfor %}
+			</ul>
+			{% if back %}
+			<a href="{{back}}" class="{{content_prefix}}back">{% include "../common/svg-sprite/svg.twig" with {icon:'back'} %} <span>Назад</span></a>			
+			{% endif %}
+			<h1 class="{{content_prefix}}heading  {{content_mod}}">{{heading}}</h1>
+			{% if note %}
+			<div class="{{content_prefix}}note  {{content_mod}}">{{note}}</div>
+			{% endif %}
+			{% if map %}
+			<h2 class="{{content_prefix}}name">Выберите сервисный центр на карте</h2>
+			<div class="{{content_prefix}}map  {{content_mod}}" id="gmap_canvas">
+			</div>
+			{% endif %}
+			{% if slider %}
+			<h2 class="{{content_prefix}}name">Специально для вас</h2>
+			<div class="{{content_prefix}}slider" data-slick-faq>
+				{% for s in slider %}
+				<div>
+					<img src="{{s.img}}" class="img-responsive" alt="">
+				</div>
+				{% endfor %}
+			</div>
+			{% endif %}
+			{% if form %}
+			<form action="#" class="{{content_prefix}}form  {{content_mod}}"  data-form-validation>
+				{% if form_heading %}
+				<h2 class="{{content_prefix}}heading  {{content_mod}}-form">{{form_heading}}</h2>
+				{% endif %}
+				<div class="{{content_prefix}}row  {{form_mod}}">
+				{% for f in form %}
+					<div>
+						{% for value in f.elem %}
+							{% if value.view == "text" %}
+							<label class="{{content_prefix}}card  {{form_mod}} {{value.mod}}">
+								<input type="{{value.type}}" class="{{content_prefix}}input  {{content_mod}}  {{value.validate}}" placeholder="{{value.placeholder}}">
+							</label>
+							{% endif %}
+							{% if value.view == "textarea" %}
+							<label class="{{content_prefix}}card  {{form_mod}} {{value.mod}}">
+								<textarea class="{{content_prefix}}input  {{content_mod}}  {{value.validate}}" placeholder="{{value.placeholder}}"></textarea>
+							</label>
+							{% endif %}
+
+							{% if value.view == "agreement" %}
+								<div class="{{content_prefix}}card  {{form_mod}} {{value.mod}}">
+									<label class="{{content_prefix}}agreement  {{content_mod}}">
+										<input class="{{content_prefix}}agreement-input  {{content_mod}}  {{value.validate}}" type="checkbox" checked id="agreement" name="agreement">
+										<span class="{{content_prefix}}agreement-icon  {{content_mod}}"></span>
+										<span>
+										{{value.placeholder}}
+										</span>
+									</label>
+								</div>
+							{% endif %}
+
+							{% if value.view == "submit" %}
+								<div class="{{content_prefix}}card  {{form_mod}} {{value.mod}}">
+									<button type="submit " class="{{content_prefix}}btn">{{value.placeholder}}</button>
+								</div>
+							{% endif %}
+						{% endfor %}
+					</div>
+				{% endfor %}
+				</div>
+			</form>				
+			{% endif %}
+		</div>
+	</section>
+{% endif %}

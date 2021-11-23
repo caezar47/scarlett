@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="ru-RU"> 
+    <head>
+        {% include "../block/common/head/head.twig" with {
+            title:"Сервисный центр выдал справку о неремонопригодности прибора, магазин где был куплен товар закрылся. Что делать?",
+        }  %}
+    </head>
+    <body>
+        {% include "../block/page/faq.twig" with {
+            view:               "card",
+
+            content_prefix:     prefix.faq, 
+            content_mod:        "is--card",  
+
+            bread:           [
+                {
+                    link:   page.faq,
+                    name:   'Чем мы можем вам помочь?',
+                },
+                {
+                    link:   page.faq_cat,
+                    name:   'Сервисное обслуживание',
+                },
+                {
+                    name:   'Сервисный центр выдал справку о неремонопригодности прибора, магазин где был куплен товар закрылся. Что делать?',
+                },
+            ],
+            back:               page.faq_cat,
+            heading:            "Сервисный центр выдал справку о&nbsp;неремонопригодности прибора, магазин где был куплен товар закрылся. Что делать?",
+            note:            "<p>Уважаемый клиент, мы&nbsp;сожалеем, что проданный товар доставил Вам неудобства из-за качества и&nbsp;затруднений по&nbsp;его компенсации.</p><p>Сообщаем Вам, что в&nbsp;соответствии с&nbsp;Законом о&nbsp;защите прав потребителей претензии по&nbsp;качеству продукции&nbsp;Вы вправе предъявить непосредственному продавцу или изготовителю товара. Сведения об&nbsp;изготовителе содержатся в&nbsp;Информации для потребителя (бумажный документ, входит в&nbsp;комплект товара) и/или нанесены на&nbsp;корпус товара. Ваши права в&nbsp;рамках действующего закона будут<br> соблюдены. </p>",
+
+            form_mod:           'is--form', 
+            form_heading:       'Остались вопросы? Напишите нам', 
+            form: [
+                {
+                    elem: [
+                        {
+                            'view':         'text',
+                            "type":         "text",
+                            "validate":     "validate[required, custom[onlyLetterSp]]",
+                            "placeholder":  "Фамилия, имя и отчество",
+                        },
+                        {
+                            'view':         'text',
+                            "type":         "email", 
+                            "validate":     "validate[required, custom[email]]",
+                            "placeholder":  "Email",
+                        },
+                        {
+                            'view':         'text',
+                            "type":         "tel", 
+                            "validate":     "validate[required, custom[phone]]",
+                            "placeholder":  "Телефон",
+                        },
+                    ],
+                },
+                {
+                    elem: [
+                        {
+                            'view':         'textarea',
+                            "placeholder":  "Комментарий",
+                        },
+                    ],
+                },
+                {
+                    elem: [
+                        {
+                            view:           'agreement',
+                            mod:            'is--submit',
+
+                            validate:       "validate[required]",
+                            placeholder:    'Нажимая кнопку «Отправить», вы соглашаетесь с <a href="#">политикой обработки персональных данных</a>',
+                        },
+                        {
+                            view:           'submit',
+                            mod:            'is--submit',
+                            placeholder:    "Отправить",
+                        },
+                    ],
+                }
+            ],
+        } %}
+        {% include "../block/common/script/script.twig" with {
+            script :"document-ready"
+        }%}
+    </body>
+</html>

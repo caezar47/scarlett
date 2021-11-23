@@ -1,5 +1,7 @@
 // подключение плагина validationEngine
 var form_panel = $("[data-form-validation]");
+var search = $(".faq__search-input");
+var search_reset = $('.faq__search-btn.is--reset');
 form_panel.validationEngine(
 	'attach', {
 		promptPosition : "bottomLeft",
@@ -13,6 +15,18 @@ file.on('change', function(e) {
     $(this).siblings('.form__file-name').html('<p><span class="is--name">'+$(this).val().replace(/.*(\/|\\)/, '')+'</span><span class="form__file-remove">Заменить</span></p>');
 });
 
+search.keyup(function(){
+	var $this = $(this),
+	val = $this.val();	  
+	if(val.length >= 1){
+		search_reset.addClass('is--visible');
+	}else {
+		search_reset.removeClass('is--visible');
+	}
+});
+search_reset.on("click",function(){
+  $(this).removeClass('is--visible')
+});
 /*
 var form_input = $(".form__control");
 var form_submit = $("[data-form-submit]");

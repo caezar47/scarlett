@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="ru-RU"> 
+    <head>
+        {% include "../block/common/head/head.twig" with {
+            title:"Сервисное обслуживание",
+        }  %}
+    </head>
+    <body>
+        {% include "../block/page/faq.twig" with {
+            view:               "category",
+
+            content_prefix:     prefix.faq, 
+            content_mod:        "is--category",  
+            heading:            "Сервисное обслуживание",
+
+            bread:           [
+                {
+                    link:   page.faq,
+                    name:   'Чем мы можем вам помочь?',
+                },
+                {
+                    name:   'Сервисное обслуживание',
+                },
+            ],
+            card:           [
+                {
+                    link:   page.faq_card,
+                    name:   'Товар сломался, что делать?',
+                },
+                {
+                    link:   page.faq_card,
+                    name:   'В какой сервисный центр обратиться?',
+                },
+                {
+                    link:   page.faq_card,
+                    name:   'Мне кажется, что прибор работает неправильно',
+                },
+                {
+                    link:   page.faq_card,
+                    name:   'Где я могу приобрести запасные части или аксессуары к технике?',
+                },
+                {
+                    link:   page.faq_card,
+                    name:   'Претензия к работе авторизованного сервисного центра',
+                },
+                {
+                    link:   page.faq_card,
+                    name:   'Мы хотим стать авторизованным сервисным центром',
+                },
+                {
+                    link:   page.faq_card,
+                    name:   'Сервисный центр выдал справку о неремонопригодности прибора, магазин где был куплен товар закрылся. Что делать?',
+                },
+                {
+                    link:   page.faq_card,
+                    name:   'Как связаться с сервисным центром?',
+                },
+            ],
+        } %}
+        {% include "../block/common/script/script.twig" with {
+            script :"document-ready"
+        }%}
+    </body>
+</html> 
