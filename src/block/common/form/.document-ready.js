@@ -8,6 +8,9 @@ form_panel.validationEngine(
 		//scrollOffset: 200,		
 		scroll: false
 }); 
+// маска для поля ввода телефона
+var phone = $("input[type='tel']");
+phone.mask("+7 (999) 999-99-99",{placeholder:"+7 (___) ___-__-__"});
 
 //Все формы 
 var file = $('.form__file-input');
@@ -53,6 +56,4 @@ form_submit.on('click', function(e) {
 	}
 	//return false;
 });
-// маска для поля ввода телефона
-var phone = $(".form__control[type='tel']");
-phone.mask("+7 (999) 999-99-99",{placeholder:"+7 (___) ___-__-__"});*/
+*/
